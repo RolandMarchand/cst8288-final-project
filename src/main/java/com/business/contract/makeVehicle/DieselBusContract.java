@@ -1,6 +1,8 @@
 
 package com.business.contract.makeVehicle;
 
+import com.business.contract.vehicleparts.BusPartsContract;
+import com.business.contract.vehicleparts.BusPartsContract;
 
 /**
  *
@@ -13,13 +15,15 @@ abstract class DieselBusContract extends VehicleContract {
     private final String consumptionRate;
     private final String maxPassengers;
     private String currentAssignedRoute;
+    private final BusPartsContract busParts;
 
-    public DieselBusContract(String fuelType, String vehicleRegistrationNumber, String consumptionRate, String maxPassengers, String currentAssignedRoute) {
+    public DieselBusContract(String fuelType, String vehicleRegistrationNumber, String consumptionRate, String maxPassengers, String currentAssignedRoute, BusPartsContract busPartsContract) {
         this.fuelEnergyType = fuelType;
         this.vehicleRegistrationNumber = vehicleRegistrationNumber;
         this.consumptionRate = consumptionRate;
         this.maxPassengers = maxPassengers;
         this.currentAssignedRoute = currentAssignedRoute;
+        this.busParts = busPartsContract;
     }
 
     @Override

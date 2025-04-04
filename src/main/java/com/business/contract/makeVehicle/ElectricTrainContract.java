@@ -4,6 +4,7 @@
  */
 package com.business.contract.makeVehicle;
 
+import com.business.contract.vehicleparts.TrainPartsContract;
 import java.lang.ProcessBuilder.Redirect.Type;
 
 /**
@@ -17,13 +18,15 @@ abstract class ElectricTrainContract extends VehicleContract {
     private final String consumptionRate;
     private final String maxPassengers;
     private String currentAssignedRoute;
+    private final TrainPartsContract trainParts;
 
-    public ElectricTrainContract(String fuelType, String vehicleRegistrationNumber, String consumptionRate, String maxPassengers, String currentAssignedRoute) {
+    public ElectricTrainContract(String fuelType, String vehicleRegistrationNumber, String consumptionRate, String maxPassengers, String currentAssignedRoute, com.business.contract.vehicleparts.TrainPartsContract trainPartsContract) {
         this.fuelEnergyType = fuelType;
         this.vehicleRegistrationNumber = vehicleRegistrationNumber;
         this.consumptionRate = consumptionRate;
         this.maxPassengers = maxPassengers;
         this.currentAssignedRoute = currentAssignedRoute;
+        this.trainParts = trainPartsContract;
     }
 
     @Override

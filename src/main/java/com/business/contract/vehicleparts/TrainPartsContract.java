@@ -8,13 +8,23 @@ package com.business.contract.vehicleparts;
  *
  * @author davey
  */
-abstract class TrainPartsContract {
+public class TrainPartsContract {
+    
+   public String trainCatenary;
+   public String trainPantograph;
+   public String trainCircuitBreaker;
    
-   abstract String getCatenary();
+   public String getCatenary(){
+       return trainCatenary;
+   }
    
-   abstract String getPantograph();
+   public String getPantograph(){
+       return trainPantograph;
+   }
    
-   abstract String getCircuitBreakers();
+   public String getCircuitBreaker(){
+       return trainCircuitBreaker;
+   }
    
    
 }

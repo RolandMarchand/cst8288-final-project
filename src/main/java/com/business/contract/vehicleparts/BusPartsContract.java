@@ -8,13 +8,28 @@ package com.business.contract.vehicleparts;
  *
  * @author davey
  */
-abstract class BusPartsContract {
+public class BusPartsContract {
+    
+   String busBrakes;
+   String busTires;
+   String busAxleBearingA;
+   String busAxleBearingB;
    
-   abstract String getBrakes();
+   public String getBrakes(){
+       return busBrakes;
+   }
    
-   abstract String getTires();
+   public String getTires(){
+       return busTires;
+   }
    
-   abstract String getAxleBearings();
+   public String getAxleBearingA(){
+       return busAxleBearingA;
+   }
+   
+   public String getAxleBearingB(){
+       return busAxleBearingB;
+   }
    
    
 }

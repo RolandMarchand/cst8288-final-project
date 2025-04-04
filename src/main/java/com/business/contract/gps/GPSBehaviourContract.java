@@ -11,11 +11,6 @@ package com.business.contract.gps;
 public interface GPSBehaviourContract {
     
     
-    public String sendInterimCoordinates();
-    
-    public String sendEnterStationCoordinates();
-    
-    public String sendExitStationCoordinates();
-    
+    public String sendCoordinates();
     
 }

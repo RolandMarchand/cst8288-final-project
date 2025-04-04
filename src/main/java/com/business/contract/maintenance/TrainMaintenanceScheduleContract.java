@@ -12,7 +12,7 @@ abstract class TrainMaintenanceScheduleContract {
     
      
     
-    abstract String setCatenaryMaintenace();
+    abstract String setCatenaryMaintenaceKM();
     
     abstract String setPantographMaintenanceKM();
     
