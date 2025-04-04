@@ -12,6 +12,8 @@ abstract class VehicleRegistration {
     
     
     abstract void createNewVehicle();
+    
+    abstract void buildVehicle();
             
   
     
