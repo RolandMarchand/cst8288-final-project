@@ -8,13 +8,18 @@ package com.business.contract;
  *
  * @author davey
  */
-abstract class VehicleRegistration {
+abstract class VehicleContract {
     
     
-    abstract void createNewVehicle();
+    abstract String getFuelEnergyType();
     
-    abstract void buildVehicle();
+    abstract String getVehicleRegistrationNumber();
+    
+    abstract String getConsumptionRate();
+    
+    abstract String getMaxPassengerCount();
+    
+    abstract String getCurrentAssignedRoute();
             
   
-    
 }
