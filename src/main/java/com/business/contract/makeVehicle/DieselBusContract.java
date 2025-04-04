@@ -1,6 +1,7 @@
 
 package com.business.contract.makeVehicle;
 
+import com.business.contract.gps.GPSBehaviourContract;
 import com.business.contract.vehicleparts.BusPartsContract;
 import com.business.contract.vehicleparts.BusPartsContract;
 
@@ -51,6 +52,7 @@ abstract class DieselBusContract extends VehicleContract {
     return this.currentAssignedRoute;
     }
     
+ 
  
 
 }

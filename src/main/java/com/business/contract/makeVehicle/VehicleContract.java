@@ -4,11 +4,13 @@
  */
 package com.business.contract.makeVehicle;
 
+import com.business.contract.gps.GPSBehaviourContract;
+
 /**
  *
  * @author davey
  */
-abstract class VehicleContract {
+abstract class VehicleContract implements GPSBehaviourContract {
     
     
     abstract String getFuelEnergyType();
@@ -20,6 +22,13 @@ abstract class VehicleContract {
     abstract String getMaxPassengerCount();
     
     abstract String getCurrentAssignedRoute();
-            
+    
+    //TODO: implement GPS coordinate function.
+    @Override
+    public String sendCoordinates(){
+        
+        return null;
+        
+    }
   
 }

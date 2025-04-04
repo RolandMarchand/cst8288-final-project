@@ -10,7 +10,7 @@ package com.business.contract.maintenance;
  */
 abstract class BusMaintenanceScheduleContract {
     
-   
+    
     
     abstract String setBrakeMaintenanceKM();
     

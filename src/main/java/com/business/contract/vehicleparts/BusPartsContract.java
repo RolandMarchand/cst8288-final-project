@@ -19,16 +19,32 @@ public class BusPartsContract {
        return busBrakes;
    }
    
+    public void setBrakes(String busBrakes){
+       this.busBrakes =  busBrakes;
+   }
+   
    public String getTires(){
        return busTires;
    }
    
-   public String getAxleBearingA(){
+      public void setTires(String busTires){
+        this.busTires =  busTires;
+   }
+      
+   public String getBusAxleBearingA(){
        return busAxleBearingA;
    }
    
-   public String getAxleBearingB(){
+      public void setBusAxleBearingA(String busAxleBearingA){
+       this.busAxleBearingA = busAxleBearingA;
+   }
+   
+   public String getBusAxleBearingB(){
        return busAxleBearingB;
+   }
+   
+      public void setBusAxleBearingB (String busAxleBearingB) {
+       this.busAxleBearingB = busAxleBearingB;
    }
    
    
