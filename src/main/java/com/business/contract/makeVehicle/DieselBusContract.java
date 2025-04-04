@@ -1,5 +1,5 @@
 
-package com.business.contract;
+package com.business.contract.makeVehicle;
 
 
 /**

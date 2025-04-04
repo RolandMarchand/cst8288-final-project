@@ -2,15 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.business.contract;
+package com.business.contract.makeVehicle;
 
+import com.business.contract.makeVehicle.VehicleContract;
 import java.lang.ProcessBuilder.Redirect.Type;
 
 /**
  *
  * @author davey
  */
-abstract class ElectricTrainContract extends VehicleContract {
+abstract class HybridTrainContract extends VehicleContract {
 
     private final String fuelEnergyType;
     private final String vehicleRegistrationNumber;
@@ -18,7 +19,7 @@ abstract class ElectricTrainContract extends VehicleContract {
     private final String maxPassengers;
     private String currentAssignedRoute;
 
-    public ElectricTrainContract(String fuelType, String vehicleRegistrationNumber, String consumptionRate, String maxPassengers, String currentAssignedRoute) {
+    public HybridTrainContract(String fuelType, String vehicleRegistrationNumber, String consumptionRate, String maxPassengers, String currentAssignedRoute) {
         this.fuelEnergyType = fuelType;
         this.vehicleRegistrationNumber = vehicleRegistrationNumber;
         this.consumptionRate = consumptionRate;
