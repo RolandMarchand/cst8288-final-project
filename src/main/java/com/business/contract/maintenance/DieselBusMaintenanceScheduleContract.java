@@ -9,7 +9,7 @@ package com.business.contract.maintenance;
  * @author davey
  */
 abstract class DieselBusMaintenanceScheduleContract extends BusMaintenanceScheduleContract {
-    
+
     final String brakesMaintenanceKM;
     final String tiresMaintenanceKM;
     final String busAxleBearingAMaintenanceKM;
@@ -22,8 +22,10 @@ abstract class DieselBusMaintenanceScheduleContract extends BusMaintenanceSchedu
     private String busAxleBearingALastMaintenanceDate;
     private String busAxleBearingBNextMaintenanceDate;
     private String busAxleBearingBLastMaintenanceDate;
-    
-    DieselBusMaintenanceScheduleContract(String brakesMaintenanceKM, String tiresMaintenanceKM, String busAxleBearingAMaintenanceKM, String busAxleBearingBMaintenanceKM, String minimumMaintenanceDate, String nextMaintenanceDate, String brakesNextMaintenanceDate, String tiresNextMaintenanceDate,String busAxleBearingANextMaintenanceDate, String busAxleBearingBNextMaintenanceDate) {
+    private String nextServiceOverhaulDate;
+    private String lastServiceOverhaulDate;
+
+    DieselBusMaintenanceScheduleContract(String brakesMaintenanceKM, String tiresMaintenanceKM, String busAxleBearingAMaintenanceKM, String busAxleBearingBMaintenanceKM, String minimumMaintenanceDate, String nextMaintenanceDate, String brakesNextMaintenanceDate, String tiresNextMaintenanceDate, String busAxleBearingANextMaintenanceDate, String busAxleBearingBNextMaintenanceDate) {
         this.brakesMaintenanceKM = brakesMaintenanceKM;
         this.tiresMaintenanceKM = tiresMaintenanceKM;
         this.busAxleBearingAMaintenanceKM = busAxleBearingAMaintenanceKM;
@@ -33,7 +35,7 @@ abstract class DieselBusMaintenanceScheduleContract extends BusMaintenanceSchedu
         this.busAxleBearingANextMaintenanceDate = busAxleBearingANextMaintenanceDate;
         this.busAxleBearingBNextMaintenanceDate = busAxleBearingBNextMaintenanceDate;
     }
-    
+
     @Override
     public String getBrakeMaintenanceKM() {
         return this.brakesMaintenanceKM;
@@ -50,72 +52,84 @@ abstract class DieselBusMaintenanceScheduleContract extends BusMaintenanceSchedu
     }
 
     @Override
-    public String getAxleBearingBMaintenanceKM(){
+    public String getAxleBearingBMaintenanceKM() {
         return this.busAxleBearingBMaintenanceKM;
     }
-    
 
     @Override
-    public String getBrakesNextMaintenanceDate(){
+    public String getBrakesNextMaintenanceDate() {
         return this.brakesNextMaintenanceDate;
     }
-    
+
     @Override
-    public String getTiresNextMaintenanceDate(){
+    public String getTiresNextMaintenanceDate() {
         return this.tiresNextMaintenanceDate;
     }
- 
-    
+
     @Override
-    public String getAxleBearingANextMaintenanceDate(){
+    public String getAxleBearingANextMaintenanceDate() {
         return this.busAxleBearingANextMaintenanceDate;
     }
-    
+
     @Override
-    public String getAxleBearingBNextMaintenanceDate(){
+    public String getAxleBearingBNextMaintenanceDate() {
         return this.busAxleBearingBNextMaintenanceDate;
     }
 
-   @Override
-    public void setBrakesNextMaintenanceDate(String brakesNextMaintenanceDate){
+    @Override
+    public void setBrakesNextMaintenanceDate(String brakesNextMaintenanceDate) {
         this.brakesNextMaintenanceDate = brakesNextMaintenanceDate;
     }
-    
+
     @Override
-    public void setBrakesLastMaintenanceDate(String brakesLastMaintenanceDate){
+    public void setBrakesLastMaintenanceDate(String brakesLastMaintenanceDate) {
         this.brakesLastMaintenanceDate = brakesLastMaintenanceDate;
     }
-    
+
     @Override
-    public void setTiresNextMaintenanceDate(String tiresNextMaintenanceDate){
+    public void setTiresNextMaintenanceDate(String tiresNextMaintenanceDate) {
         this.tiresNextMaintenanceDate = tiresNextMaintenanceDate;
     }
-    
+
     @Override
-      public void setTiresLastMaintenanceDate(String tiresLastMaintenanceDate){
+    public void setTiresLastMaintenanceDate(String tiresLastMaintenanceDate) {
         this.tiresLastMaintenanceDate = tiresLastMaintenanceDate;
     }
-    
-    
+
     @Override
-    public void setAxleBearingANextMaintenanceDate(String busAxleBearingANextMaintenanceDate){
+    public void setAxleBearingANextMaintenanceDate(String busAxleBearingANextMaintenanceDate) {
         this.busAxleBearingANextMaintenanceDate = busAxleBearingANextMaintenanceDate;
     }
-    
-       @Override
-     public void setAxleBearingALastMaintenanceDate(String busAxleBearingANextMaintenanceDate){
+
+    @Override
+    public void setAxleBearingALastMaintenanceDate(String busAxleBearingANextMaintenanceDate) {
         this.busAxleBearingANextMaintenanceDate = busAxleBearingANextMaintenanceDate;
     }
-       @Override
-      public void setAxleBearingBNextMaintenanceDate(String busAxleBearingBNextMaintenanceDate){
+
+    @Override
+    public void setAxleBearingBNextMaintenanceDate(String busAxleBearingBNextMaintenanceDate) {
         this.busAxleBearingBNextMaintenanceDate = busAxleBearingBNextMaintenanceDate;
     }
-    
-      @Override
-     public void setAxleBearingBLastMaintenanceDate(String busAxleBearingBNextMaintenanceDate){
+
+    @Override
+    public void setAxleBearingBLastMaintenanceDate(String busAxleBearingBNextMaintenanceDate) {
         this.busAxleBearingBNextMaintenanceDate = busAxleBearingBNextMaintenanceDate;
     }
-    
-    
-    
+
+    public String getNextServiceOverhaulDate() {
+        return nextServiceOverhaulDate;
+    }
+
+    public void setNextServiceOverhaulDate(String nextServiceOverhaulDate) {
+        this.nextServiceOverhaulDate = nextServiceOverhaulDate;
+    }
+
+    public String getLastServiceOverhaulDate() {
+        return lastServiceOverhaulDate;
+    }
+
+    public void setLastServiceOverhaulDate(String lastServiceOverhaulDate) {
+        this.lastServiceOverhaulDate = lastServiceOverhaulDate;
+    }
+
 }
