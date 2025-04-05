@@ -3,51 +3,39 @@ package viewLayer;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * Front end main controller, all forms and posts go here, and are filtered by their action attribute's value.
- * 
  * @author sebl4
  */
-@WebServlet(name = "MainController", urlPatterns = {"/MainController-URL"})
-public class MainController extends HttpServlet {
-    
+public class HubPage extends HttpServlet {
+
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        String action = request.getParameter("action");
-        if(action == null || action.isEmpty()) {
-            action = "welcome";
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet HubPage</title>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet HubPage at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
-        
-        String url;
-        switch(action) {
-            case "welcome":
-                url = "/WelcomePage-URL";
-                break;
-            case "login":
-                url = "/LoginPage-URL";
-                break;
-            case "attemptUserLogin":
-                url = "/WelcomePage-URL";//TEMPORARY
-                break; 
-            case "register":
-                url = "/RegistrationPage-URL";
-                break; 
-            case "attemptUserRegistration":
-                url = "/WelcomePage-URL";//TEMPORARY
-                break;
-            
-                
-            default:
-                url = "/WelcomePage-URL";
-        }
-        request.getRequestDispatcher(url).forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

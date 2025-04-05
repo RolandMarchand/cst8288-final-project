@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
+ * This servlet handles the user registration form and posts a attemptUserRegistration action to MainController.
+ * The following html attributes are also populated: firstName, lastName, email, password, userType. 
+ * 
  * @author sebl4
  */
 public class RegistrationPage extends HttpServlet {
@@ -16,6 +18,8 @@ public class RegistrationPage extends HttpServlet {
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
+     * 
+     * Displays registration form to users. Posts action to MainController 
      *
      * @param request servlet request
      * @param response servlet response
@@ -26,7 +30,6 @@ public class RegistrationPage extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html lang=\"en\">");
             out.println("<head>");
@@ -57,8 +60,11 @@ public class RegistrationPage extends HttpServlet {
             out.println("<option value=\"Manager\">Manager</option>");
             out.println("</select><br><br>");
             
-            out.println("<button type=\"submit\" name=\"action\" value=\"registerUser\">Register</button>");
+            out.println("<button type=\"submit\" name=\"action\" value=\"attemptUserRegistration\">Register</button>");
             out.println("</form>");
+            out.println("<br>");
+            out.println("<br>");
+            out.println("<button type=\"button\" onclick=\"window.location.href='WelcomePage-URL'\">Back to Welcome</button>");
             out.println("</center>");
             
             out.println("</body>");

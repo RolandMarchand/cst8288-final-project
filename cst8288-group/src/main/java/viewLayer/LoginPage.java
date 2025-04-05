@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
+ * Servlet handles the form for user login and posts a attemptUserLogin action to MainController.
+ * The following html attributes are also populated: email, password.
+ * 
  * @author sebl4
  */
 @WebServlet(name = "LoginPage", urlPatterns = {"/LoginPage-URL"})
@@ -28,7 +30,6 @@ public class LoginPage extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html lang=\"en\">");
             out.println("<head>");
@@ -45,9 +46,12 @@ public class LoginPage extends HttpServlet {
             out.println("<input type=\"email\" id=\"email\" name=\"email\" required><br><br>");
             out.println("<label for=\"password\">Password:</label><br>");
             out.println("<input type=\"password\" id=\"password\" name=\"password\" required><br><br>");
-            out.println("<button type=\"submit\" name=\"action\" value=\"loginUser\">Login</button>");
-           
+            out.println("<button type=\"submit\" name=\"action\" value=\"attemptUserLogin\">Login</button>");
             out.println("</form>");
+            out.println("<br>");
+            out.println("<br>");
+            out.println("<button type=\"button\" onclick=\"window.location.href='WelcomePage-URL'\">Back to Welcome</button>");
+            
             out.println("</center>");
             out.println("</body>");
             out.println("</html>");

@@ -20,6 +20,10 @@
         <servlet-name>AddVehiclePage</servlet-name>
         <servlet-class>viewLayer.AddVehiclePage</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>HubPage</servlet-name>
+        <servlet-class>viewLayer.HubPage</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>WelcomePage</servlet-name>
         <url-pattern>/WelcomePage-URL</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>AddVehiclePage</servlet-name>
         <url-pattern>/AddVehiclePage-URL</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HubPage</servlet-name>
+        <url-pattern>/HubPage-URL</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

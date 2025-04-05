@@ -9,6 +9,11 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
+ * Servlet handles vehicle registration and posts attemptVehicleRegistration action to MainController.
+ * 
+ * Populates the following html attributes:vehicleType, vehicleNumber, fuelType,
+ * consumptionRate, and maxPassengers.
+ * 
  * @author sebl4
  */
 public class AddVehiclePage extends HttpServlet {
@@ -26,7 +31,6 @@ public class AddVehiclePage extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html lang=\"en\">");
             out.println("<head>");
@@ -52,8 +56,8 @@ public class AddVehiclePage extends HttpServlet {
             out.println("<label for=\"fuelType\">Fuel/Energy Type:</label><br>");
             out.println("<select id=\"fuelType\" name=\"fuelType\" required>");
             out.println("<option value=\"Electric\">Electric</option>");
-            out.println("<option value=\"Gasoline\">Gasoline</option>");
             out.println("<option value=\"Diesel\">Diesel</option>");
+            out.println("<option value=\"Diesel-Electric\">Diesel-Electric</option>");
             out.println("</select><br><br>");
             
             out.println("<label for=\"consumptionRate\">Consumption Rate:</label><br>");
@@ -61,7 +65,9 @@ public class AddVehiclePage extends HttpServlet {
             
             out.println("<label for=\"maxPassengers\">Maximum # of Passengers:</label><br>");
             out.println("<input type=\"number\" id=\"maxPassengers\" name=\"maxPassengers\" required><br><br>");
-            out.println("<button type=\"submit\" name=\"action\" value=\"registerVehicle\">Login</button>");
+            out.println("<button type=\"submit\" name=\"action\" value=\"attemptVehicleRegistration\">Register Vehicle</button>");
+            out.println("<br>");
+            out.println("<button type=\"button\" onclick=\"history.back()\">Back</button>");
            
             out.println("</form>");
             out.println("</center>");

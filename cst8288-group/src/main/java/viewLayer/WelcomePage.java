@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
+ * A servlet that displays a welcome page for the Public Transit Fleet Management System.
+ * Provides option to either register or login to the system. Sends a register or login action to MainController
+ * 
  * @author sebl4
  */
 public class WelcomePage extends HttpServlet {
@@ -16,6 +18,8 @@ public class WelcomePage extends HttpServlet {
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
+     * 
+     * Prompts user to either login or register. Posts appropriate HTML attribute to MainController.java
      *
      * @param request servlet request
      * @param response servlet response
