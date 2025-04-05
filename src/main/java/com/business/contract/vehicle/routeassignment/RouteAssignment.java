@@ -6,8 +6,8 @@ package com.business.contract.vehicle.routeassignment;
 
 /**
  *
- * @author davey
+ * @author D. Santos
  */
 public class RouteAssignment {
-    
+
 }

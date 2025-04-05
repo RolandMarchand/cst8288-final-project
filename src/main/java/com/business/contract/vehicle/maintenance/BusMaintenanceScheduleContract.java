@@ -6,7 +6,7 @@ package com.business.contract.vehicle.maintenance;
 
 /**
  *
- * @author davey
+ * @author D. Santos
  */
 abstract class BusMaintenanceScheduleContract {
 
@@ -57,5 +57,7 @@ abstract class BusMaintenanceScheduleContract {
     abstract String getLastServiceOverhaulDate();
 
     abstract protected void setLastServiceOverhaulDate(String LastServiceOverhaulDate);
+
+    abstract protected void sendMaintenanceAlert();
 
 }

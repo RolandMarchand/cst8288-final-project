@@ -6,7 +6,7 @@ package com.business.contract.vehicle.maintenance;
 
 /**
  *
- * @author davey
+ * @author D. Santos
  */
 abstract class DieselBusMaintenanceScheduleContract extends BusMaintenanceScheduleContract {
 

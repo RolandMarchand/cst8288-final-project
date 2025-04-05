@@ -6,7 +6,7 @@ package com.business.contract.vehicle.vehicleparts;
 
 /**
  *
- * @author davey
+ * @author D. Santos
  */
 public class TrainPartsContract {
 

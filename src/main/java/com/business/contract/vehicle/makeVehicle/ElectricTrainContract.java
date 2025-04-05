@@ -9,7 +9,7 @@ import java.lang.ProcessBuilder.Redirect.Type;
 
 /**
  *
- * @author davey
+ * @author D. Santos
  */
 abstract class ElectricTrainContract extends VehicleContract {
 

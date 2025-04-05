@@ -4,13 +4,13 @@
  */
 package com.business.contract.vehicle.makeVehicle;
 
-import com.business.contract.vehicle.gps.GPSBehaviourContract;
+import com.business.contract.vehicle.gps.GPSOdometerContract;
 
 /**
  *
- * @author davey
+ * @author D. Santos
  */
-abstract class VehicleContract implements GPSBehaviourContract {
+abstract class VehicleContract implements GPSOdometerContract {
 
     abstract String getFuelEnergyType();
 
@@ -22,21 +22,5 @@ abstract class VehicleContract implements GPSBehaviourContract {
 
     abstract String getCurrentAssignedRoute();
 
-    
-     //TODO: implement GPS coordinate generation.
-    @Override
-    public String generateCoordinates() {
-
-        return null;
-
-    }
-    
-    //TODO: implement GPS coordinate transmission.
-    @Override
-    public String sendCoordinates() {
-
-        return null;
-
-    }
-
+ 
 }

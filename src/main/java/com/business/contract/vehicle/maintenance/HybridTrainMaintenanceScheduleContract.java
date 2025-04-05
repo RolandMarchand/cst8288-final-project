@@ -6,7 +6,7 @@ package com.business.contract.vehicle.maintenance;
 
 /**
  *
- * @author davey
+ * @author D. Santos
  */
 abstract class HybridTrainMaintenanceScheduleContract extends TrainMaintenanceScheduleContract {
 
@@ -54,8 +54,7 @@ abstract class HybridTrainMaintenanceScheduleContract extends TrainMaintenanceSc
     public void setCatenaryNextMaintenanceDate(String catenaryNextMaintenanceDate) {
         this.catenaryNextMaintenanceDate = catenaryNextMaintenanceDate;
     }
-    
-    
+
     @Override
     public String getCatenaryLastMaintenanceDate() {
         return this.catenaryLastMaintenanceDate;
@@ -75,8 +74,8 @@ abstract class HybridTrainMaintenanceScheduleContract extends TrainMaintenanceSc
     public void setPantographNextMaintenanceDate(String pantographNextMaintenanceDate) {
         this.pantographNextMaintenanceDate = pantographNextMaintenanceDate;
     }
-    
-        @Override
+
+    @Override
     public String getPantographLastMaintenanceDate() {
         return this.pantographLastMaintenanceDate;
     }
@@ -105,6 +104,5 @@ abstract class HybridTrainMaintenanceScheduleContract extends TrainMaintenanceSc
     public void setCircuitBreakerLastMaintenanceDate(String circuitBreakerLastMaintenanceDate) {
         this.circuitBreakerLastMaintenanceDate = circuitBreakerLastMaintenanceDate;
     }
-    
-    
+
 }
