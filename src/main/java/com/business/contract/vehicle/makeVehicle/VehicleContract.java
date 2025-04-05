@@ -5,12 +5,13 @@
 package com.business.contract.vehicle.makeVehicle;
 
 import com.business.contract.vehicle.gps.GPSOdometerContract;
+import com.business.vehicle.gpsimpl.GpsSimulator;
 
 /**
  *
  * @author D. Santos
  */
-abstract class VehicleContract implements GPSOdometerContract {
+abstract class VehicleContract extends GpsSimulator {
 
     abstract String getFuelEnergyType();
 

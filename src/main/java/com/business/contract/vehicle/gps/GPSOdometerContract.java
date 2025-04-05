@@ -4,6 +4,7 @@
  */
 package com.business.contract.vehicle.gps;
 
+import java.time.LocalDateTime;
 import java.util.HashMap;
 
 /**
@@ -12,28 +13,28 @@ import java.util.HashMap;
  */
 public interface GPSOdometerContract {
     
-    abstract void gpsOverallCoordinator();
+    public void gpsOverallCoordinator();
     
-    abstract void reportCoordinates();
+    public void reportCoordinates();
     
-    abstract void reportVehicleSpeed();
+    public void reportVehicleSpeed();
     
-    abstract void reportTime();
+    public void reportTime();
     
-    abstract HashMap simulateVehicleActivity();
+    public void simulateVehicleActivity();
     
-    abstract HashMap simulateVehicleLattitude();
+    public void simulateVehicleLattitude();
     
-    abstract HashMap simulateVehicleLongitude();
+    public void simulateVehicleLongitude();
     
-    abstract HashMap simulateClockTime();
+    public void simulateClockTime();
     
-    abstract void simulateFuelEnergyLevel();
+    public void simulateFuelEnergyLevel();
     
-    abstract void calculateFuelEfficiency();
+    public void calculateFuelEfficiency();
     
-    abstract void calculateEnergyEfficiency();
+    public void calculateEnergyEfficiency();
     
-    abstract void sendFuelAlert();
+    public void sendFuelAlert();
    
 }
