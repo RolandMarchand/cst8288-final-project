@@ -48,6 +48,27 @@ public class MainController extends HttpServlet {
             case "attemptVehicleRegistration":
                 url = "/ValidateNewVehicleServlet-URL";
                 break;
+            case "deleteVehicle":
+                url = "/DeleteVehiclePage-URL";
+                break;    
+            case "attemptVehicleDeletion":
+                url = "/DeleteVehiclePage-URL";//TEMPORARY
+                break;  
+            case "vehicleManagement":
+                url = "/VehicleManagementPage-URL";
+                break;
+            case "fuelReporting":
+                url = "/FuelReportPage-URL";
+                break;
+            case "maintenanceDashboard":
+                url = "/MaintenanceDashboardPage-URL";
+                break;
+            case "gpsTracking":
+                url = "/GpsTrackingPage-URL";
+                break;
+            case "signOutUser":
+                url = "/SignOutServlet-URL";
+                break;    
             default:
                 url = "/WelcomePage-URL";
         }

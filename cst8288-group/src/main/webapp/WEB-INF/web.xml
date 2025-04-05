@@ -36,6 +36,14 @@
         <servlet-name>ValidateNewUser</servlet-name>
         <servlet-class>business.ValidateNewUser</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteVehiclePage</servlet-name>
+        <servlet-class>presentation.DeleteVehiclePage</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>VehicleManagementPage</servlet-name>
+        <servlet-class>presentation.VehicleManagementPage</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>WelcomePage</servlet-name>
         <url-pattern>/WelcomePage-URL</url-pattern>
@@ -71,6 +79,14 @@
     <servlet-mapping>
         <servlet-name>ValidateNewUser</servlet-name>
         <url-pattern>/ValidateNewUser-URL</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteVehiclePage</servlet-name>
+        <url-pattern>/DeleteVehiclePage-URL</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VehicleManagementPage</servlet-name>
+        <url-pattern>/VehicleManagementPage</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author sebl4
  */
-public class HubPage extends HttpServlet {
+public class VehicleManagementPage extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -27,24 +27,21 @@ public class HubPage extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             out.println("<!DOCTYPE html>");
-            out.println("<html lang=\"en\">");
+            out.println("<html>");
             out.println("<head>");
-            out.println("<meta charset=\"UTF-8\">");
-            out.println("<title>Login</title>");
+            out.println("<title>Vehicle Management</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<center>");
             
-            out.println("<h1>Transit System Hub</h1>");
+            out.println("<h1>Vehicle Management</h1>");
             out.println("<form action=\"MainController-URL\" method=\"POST\">");
-            out.println("<button type=\"submit\" name=\"action\" value=\"vehicleManagement\">Vehicle Management</button>");
-            out.println("<button type=\"submit\" name=\"action\" value=\"fuelReporting\">Fuel Consumption Reports</button>");
-            out.println("<button type=\"submit\" name=\"action\" value=\"maintenanceDashboard\">Maintenance Dashboard</button>");
-            out.println("<button type=\"submit\" name=\"action\" value=\"gpsTracking\">GPS Tracking</button>");
+            out.println("<button type=\"submit\" name=\"action\" value=\"addNewVehicle\">Add New Vehicle</button>");
+            out.println("<button type=\"submit\" name=\"action\" value=\"deleteVehicle\">Delete Vehicle</button>");
             out.println("</form>");
             out.println("<br>");
             out.println("<br>");
-            out.println("<button type=\"submit\" name=\"action\" value=\"signOutUser\">Sign Out</button>");
+            out.println("<button type=\"button\" onclick=\"window.location.href='WelcomePage-URL'\">Back to Welcome</button>");
             
             out.println("</center>");
             out.println("</body>");

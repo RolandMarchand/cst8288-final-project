@@ -8,10 +8,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
+ * Page for vehicle deletion form, POSTS attemptVehicleDeletion action to MainController.
+ * Attributes sent: action, idToDelete.
+ * 
  * @author sebl4
  */
-public class HubPage extends HttpServlet {
+public class DeleteVehiclePage extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -27,25 +29,22 @@ public class HubPage extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             out.println("<!DOCTYPE html>");
-            out.println("<html lang=\"en\">");
+            out.println("<html>");
             out.println("<head>");
-            out.println("<meta charset=\"UTF-8\">");
-            out.println("<title>Login</title>");
+            out.println("<title>Delete Vehicle</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<center>");
             
-            out.println("<h1>Transit System Hub</h1>");
+            out.println("<h1>Delete Vehicle</h1>");
             out.println("<form action=\"MainController-URL\" method=\"POST\">");
-            out.println("<button type=\"submit\" name=\"action\" value=\"vehicleManagement\">Vehicle Management</button>");
-            out.println("<button type=\"submit\" name=\"action\" value=\"fuelReporting\">Fuel Consumption Reports</button>");
-            out.println("<button type=\"submit\" name=\"action\" value=\"maintenanceDashboard\">Maintenance Dashboard</button>");
-            out.println("<button type=\"submit\" name=\"action\" value=\"gpsTracking\">GPS Tracking</button>");
+            out.println("<label for=\"idToDelete\">Vehicle ID:</label><br>");
+            out.println("<input type=\"number\" id=\"idToDelete\" name=\"idToDelete\" required><br><br>");
+            out.println("<button type=\"submit\" name=\"action\" value=\"attemptVehicleDeletion\">Delete</button>");
             out.println("</form>");
             out.println("<br>");
             out.println("<br>");
-            out.println("<button type=\"submit\" name=\"action\" value=\"signOutUser\">Sign Out</button>");
-            
+            out.println("<button type=\"button\" onclick=\"history.back()\">Back</button>");
             out.println("</center>");
             out.println("</body>");
             out.println("</html>");
