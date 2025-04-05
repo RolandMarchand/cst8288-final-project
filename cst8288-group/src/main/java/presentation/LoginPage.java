@@ -1,22 +1,21 @@
-package viewLayer;
+package presentation;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
- * Servlet handles vehicle registration and posts attemptVehicleRegistration action to MainController.
- * 
- * Populates the following html attributes:vehicleType, vehicleNumber, fuelType,
- * consumptionRate, and maxPassengers.
+ * Servlet handles the form for user login and posts a attemptUserLogin action to MainController.
+ * The following html attributes are also populated: email, password.
  * 
  * @author sebl4
  */
-public class AddVehiclePage extends HttpServlet {
+@WebServlet(name = "LoginPage", urlPatterns = {"/LoginPage-URL"})
+public class LoginPage extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,38 +37,20 @@ public class AddVehiclePage extends HttpServlet {
             out.println("<title>Login</title>");
             out.println("</head>");
             out.println("<body>");
-        
             out.println("<center>");
-            out.println("<h1>Transit System Vehicle Registration</h1>");
+            
+            out.println("<h1>Transit System Login</h1>");
             out.println("<form action=\"MainController-URL\" method=\"POST\">");
-            
-            out.println("<label for=\"vehicleType\">Vehicle Type:</label><br>");
-            out.println("<select id=\"vehicleType\" name=\"vehicleType\" required>");
-            out.println("<option value=\"Diesel Bus\">Diesel Bus</option>");
-            out.println("<option value=\"Electric Light Rail\">Electric Light Rail</option>");
-            out.println("<option value=\"Diesel-Electric Train\">Diesel-Electric Train</option>");
-            out.println("</select><br><br>");
-            
-            out.println("<label for=\"vehicleNumber\">Vehicle Number:</label><br>");
-            out.println("<input type=\"text\" id=\"vehicleNumber\" name=\"vehicleNumber\" required><br><br>");
-            
-            out.println("<label for=\"fuelType\">Fuel/Energy Type:</label><br>");
-            out.println("<select id=\"fuelType\" name=\"fuelType\" required>");
-            out.println("<option value=\"Electric\">Electric</option>");
-            out.println("<option value=\"Diesel\">Diesel</option>");
-            out.println("<option value=\"Diesel-Electric\">Diesel-Electric</option>");
-            out.println("</select><br><br>");
-            
-            out.println("<label for=\"consumptionRate\">Consumption Rate:</label><br>");
-            out.println("<input type=\"number\" step=\"0.01\" id=\"consumptionRate\" name=\"consumptionRate\" required><br><br>");
-            
-            out.println("<label for=\"maxPassengers\">Maximum # of Passengers:</label><br>");
-            out.println("<input type=\"number\" id=\"maxPassengers\" name=\"maxPassengers\" required><br><br>");
-            out.println("<button type=\"submit\" name=\"action\" value=\"attemptVehicleRegistration\">Register Vehicle</button>");
-            out.println("<br>");
-            out.println("<button type=\"button\" onclick=\"history.back()\">Back</button>");
-           
+            out.println("<label for=\"email\">Email:</label><br>");
+            out.println("<input type=\"email\" id=\"email\" name=\"email\" required><br><br>");
+            out.println("<label for=\"password\">Password:</label><br>");
+            out.println("<input type=\"password\" id=\"password\" name=\"password\" required><br><br>");
+            out.println("<button type=\"submit\" name=\"action\" value=\"attemptUserLogin\">Login</button>");
             out.println("</form>");
+            out.println("<br>");
+            out.println("<br>");
+            out.println("<button type=\"button\" onclick=\"window.location.href='WelcomePage-URL'\">Back to Welcome</button>");
+            
             out.println("</center>");
             out.println("</body>");
             out.println("</html>");

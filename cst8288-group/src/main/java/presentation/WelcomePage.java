@@ -1,53 +1,54 @@
-package viewLayer;
+package presentation;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
- * Front end main controller, all forms and posts go here, and are filtered by their action attribute's value.
+ * A servlet that displays a welcome page for the Public Transit Fleet Management System.
+ * Provides option to either register or login to the system. Sends a register or login action to MainController
  * 
  * @author sebl4
  */
-@WebServlet(name = "MainController", urlPatterns = {"/MainController-URL"})
-public class MainController extends HttpServlet {
-    
+public class WelcomePage extends HttpServlet {
+
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     * 
+     * Prompts user to either login or register. Posts appropriate HTML attribute to MainController.java
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        String action = request.getParameter("action");
-        if(action == null || action.isEmpty()) {
-            action = "welcome";
-        }
-        
-        String url;
-        switch(action) {
-            case "welcome":
-                url = "/WelcomePage-URL";
-                break;
-            case "login":
-                url = "/LoginPage-URL";
-                break;
-            case "attemptUserLogin":
-                url = "/WelcomePage-URL";//TEMPORARY
-                break; 
-            case "register":
-                url = "/RegistrationPage-URL";
-                break; 
-            case "attemptUserRegistration":
-                url = "/WelcomePage-URL";//TEMPORARY
-                break;
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            out.println("<!DOCTYPE html>");
+            out.println("<html lang=\"en\">");
+            out.println("<head>");
+            out.println("<meta charset=\"UTF-8\">");
+            out.println("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
+            out.println("<title>Welcome Page</title>");
+            out.println("</head>");
+            out.println("<body>");
             
-                
-            default:
-                url = "/WelcomePage-URL";
+            out.println("<h1>Welcome to the Public Transit Fleet Management System</h1>");
+            
+            out.println("<form action=\"MainController-URL\" method=\"POST\">");
+            out.println("<button type=\"submit\" name=\"action\" value=\"register\">Register</button>");
+            out.println("<button type=\"submit\" name=\"action\" value=\"login\">Login</button>");
+            out.println("</form>");
+
+            out.println("</body>");
+            out.println("</html>");
         }
-        request.getRequestDispatcher(url).forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

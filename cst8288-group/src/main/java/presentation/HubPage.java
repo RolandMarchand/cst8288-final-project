@@ -1,21 +1,17 @@
-package viewLayer;
+package presentation;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet handles the form for user login and posts a attemptUserLogin action to MainController.
- * The following html attributes are also populated: email, password.
- * 
+ *
  * @author sebl4
  */
-@WebServlet(name = "LoginPage", urlPatterns = {"/LoginPage-URL"})
-public class LoginPage extends HttpServlet {
+public class HubPage extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,20 +33,18 @@ public class LoginPage extends HttpServlet {
             out.println("<title>Login</title>");
             out.println("</head>");
             out.println("<body>");
-        
             out.println("<center>");
-            out.println("<h1>Transit System Login</h1>");
+            
+            out.println("<h1>Transit System Hub</h1>");
             out.println("<form action=\"MainController-URL\" method=\"POST\">");
-
-            out.println("<label for=\"email\">Email:</label><br>");
-            out.println("<input type=\"email\" id=\"email\" name=\"email\" required><br><br>");
-            out.println("<label for=\"password\">Password:</label><br>");
-            out.println("<input type=\"password\" id=\"password\" name=\"password\" required><br><br>");
+            out.println("<button type=\"submit\" name=\"action\" value=\"attemptUserLogin\">Login</button>");
+            out.println("<button type=\"submit\" name=\"action\" value=\"attemptUserLogin\">Login</button>");
+            out.println("<button type=\"submit\" name=\"action\" value=\"attemptUserLogin\">Login</button>");
             out.println("<button type=\"submit\" name=\"action\" value=\"attemptUserLogin\">Login</button>");
             out.println("</form>");
             out.println("<br>");
             out.println("<br>");
-            out.println("<button type=\"button\" onclick=\"window.location.href='WelcomePage-URL'\">Back to Welcome</button>");
+            out.println("<button type=\"submit\" name=\"action\" value=\"signOutUser\">Sign Out</button>");
             
             out.println("</center>");
             out.println("</body>");
