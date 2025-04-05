@@ -30,30 +30,28 @@ abstract class ElectricTrainContract extends VehicleContract {
     }
 
     @Override
-    public String getFuelEnergyType(){
-    return this.fuelEnergyType;
+    public String getFuelEnergyType() {
+        return this.fuelEnergyType;
     }
-    
-     @Override
-    public String getVehicleRegistrationNumber(){
-    return this.vehicleRegistrationNumber;
+
+    @Override
+    public String getVehicleRegistrationNumber() {
+        return this.vehicleRegistrationNumber;
     }
-    
-     @Override
-    public String getConsumptionRate(){
-    return this.consumptionRate;
+
+    @Override
+    public String getConsumptionRate() {
+        return this.consumptionRate;
     }
-    
-     @Override
-    public String getMaxPassengerCount(){
-    return this.maxPassengers;
+
+    @Override
+    public String getMaxPassengerCount() {
+        return this.maxPassengers;
     }
-    
-     @Override
-    public String getCurrentAssignedRoute(){
-    return this.currentAssignedRoute;
+
+    @Override
+    public String getCurrentAssignedRoute() {
+        return this.currentAssignedRoute;
     }
-    
- 
 
 }

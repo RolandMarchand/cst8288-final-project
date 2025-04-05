@@ -9,35 +9,33 @@ package com.business.contract.vehicleparts;
  * @author davey
  */
 public class TrainPartsContract {
-    
-   public String trainCatenary;
-   public String trainPantograph;
-   public String trainCircuitBreaker;
-   
-   public String getCatenary(){
-       return trainCatenary;
-   }
-   
-    public void setTrainCatenary(String trainCatenary){
-       this.trainCatenary = trainCatenary;
-   }
-    
-   public String getPantograph(){
-       return trainPantograph;
-   }
-   
-    public void getPantograph(String trainPantograph){
-       this.trainPantograph = trainPantograph;
-   }
-   
-   public String getCircuitBreaker(){
-       return trainCircuitBreaker;
-   }
-   
-     public void getCircuitBreaker(String trainCircuitBreaker){
-       this.trainCircuitBreaker = trainCircuitBreaker;
-   }
-   
-   
-   
+
+    public String trainCatenary;
+    public String trainPantograph;
+    public String trainCircuitBreaker;
+
+    public String getCatenary() {
+        return trainCatenary;
+    }
+
+    public void setTrainCatenary(String trainCatenary) {
+        this.trainCatenary = trainCatenary;
+    }
+
+    public String getPantograph() {
+        return trainPantograph;
+    }
+
+    public void getPantograph(String trainPantograph) {
+        this.trainPantograph = trainPantograph;
+    }
+
+    public String getCircuitBreaker() {
+        return trainCircuitBreaker;
+    }
+
+    public void getCircuitBreaker(String trainCircuitBreaker) {
+        this.trainCircuitBreaker = trainCircuitBreaker;
+    }
+
 }

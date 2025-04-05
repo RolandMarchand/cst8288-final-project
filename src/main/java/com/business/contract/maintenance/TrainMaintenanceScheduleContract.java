@@ -9,17 +9,37 @@ package com.business.contract.maintenance;
  * @author cretaceous74
  */
 abstract class TrainMaintenanceScheduleContract {
+
+    abstract String getCatenaryMaintenaceKM();
+
+    abstract String getPantographMaintenanceKM();
+
+    abstract String getCircuitBreakersMaintenanceKM();
+
     
-     
     
-    abstract String setCatenaryMaintenaceKM();
+    abstract String getCatenaryNextMaintenanceDate();
+
+    abstract void setCatenaryNextMaintenanceDate(String catenaryNextMaintenanceDate);
+    abstract String getCatenaryLastMaintenanceDate();
+
+    abstract void setCatenaryLastMaintenanceDate(String catenaryLastMaintenanceDate);
     
-    abstract String setPantographMaintenanceKM();
     
-    abstract String setCircuitBreakersMaintenanceKM();
+    abstract String getPantographNextMaintenanceDate();
+    abstract void setPantographNextMaintenanceDate(String pantographNextMaintenanceDate);
+    abstract String getPantographLastMaintenanceDate();
+    abstract void setPantographLastMaintenanceDate(String pantographLastMaintenanceDate);
     
-    abstract String setMinimumMaintenanceDate();
     
-    abstract String setNextMaintenenanceDate();
+    abstract String getCircuitBreakerNextMaintenanceDate();
+
+    abstract void setCircuitBreakerNextMaintenanceDate(String circuitBreakerNextMaintenanceDate);
     
+    abstract String getCircuitBreakerLastMaintenanceDate();
+
+    abstract void setCircuitBreakerLastMaintenanceDate(String circuitBreakerLastMaintenanceDate);
+    
+    
+
 }

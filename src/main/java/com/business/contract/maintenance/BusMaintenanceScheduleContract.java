@@ -9,17 +9,21 @@ package com.business.contract.maintenance;
  * @author davey
  */
 abstract class BusMaintenanceScheduleContract {
-    
-    
-    
-    abstract String setBrakeMaintenanceKM();
-    
-    abstract String setTiresMaintenanceKM();
-    
-    abstract String setAxleBearingsMaintenanceKM();
-    
-    abstract String setMinimumMaintenanceDate();
-    
-    abstract String setNextMaintenenanceDate();
-    
+
+    abstract String getBrakeMaintenanceKM();
+
+    abstract String getTiresMaintenanceKM();
+
+    abstract String getAxleBearingAMaintenanceKM();
+
+    abstract String getAxleBearingBMaintenanceKM();
+
+    abstract String getBrakesNextMaintenanceDate();
+
+    abstract String getTiresNextMaintenanceDate();
+
+    abstract String getAxleBearingANextMaintenanceDate();
+
+    abstract String getAxleBearingBNextMaintenanceDate();
+
 }
