@@ -1,29 +1,32 @@
-package com.business.contract.makeVehicle;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.business.contract.vehicle.makeVehicle;
 
-import com.business.contract.gps.GPSBehaviourContract;
-import com.business.contract.vehicleparts.BusPartsContract;
-import com.business.contract.vehicleparts.BusPartsContract;
+import com.business.contract.vehicle.vehicleparts.TrainPartsContract;
+import java.lang.ProcessBuilder.Redirect.Type;
 
 /**
  *
- * @author D. Santos
+ * @author davey
  */
-abstract class DieselBusContract extends VehicleContract {
+abstract class ElectricTrainContract extends VehicleContract {
 
     private final String fuelEnergyType;
     private final String vehicleRegistrationNumber;
     private final String consumptionRate;
     private final String maxPassengers;
     private String currentAssignedRoute;
-    private final BusPartsContract busParts;
+    private final TrainPartsContract trainParts;
 
-    public DieselBusContract(String fuelType, String vehicleRegistrationNumber, String consumptionRate, String maxPassengers, String currentAssignedRoute, BusPartsContract busPartsContract) {
+    public ElectricTrainContract(String fuelType, String vehicleRegistrationNumber, String consumptionRate, String maxPassengers, String currentAssignedRoute, com.business.contract.vehicle.vehicleparts.TrainPartsContract trainPartsContract) {
         this.fuelEnergyType = fuelType;
         this.vehicleRegistrationNumber = vehicleRegistrationNumber;
         this.consumptionRate = consumptionRate;
         this.maxPassengers = maxPassengers;
         this.currentAssignedRoute = currentAssignedRoute;
-        this.busParts = busPartsContract;
+        this.trainParts = trainPartsContract;
     }
 
     @Override

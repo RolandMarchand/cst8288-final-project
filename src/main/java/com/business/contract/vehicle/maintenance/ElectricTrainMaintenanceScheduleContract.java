@@ -2,13 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.business.contract.maintenance;
+package com.business.contract.vehicle.maintenance;
 
 /**
  *
  * @author davey
  */
-abstract class HybridTrainMaintenanceScheduleContract extends TrainMaintenanceScheduleContract {
+abstract class ElectricTrainMaintenanceScheduleContract extends TrainMaintenanceScheduleContract {
 
     final String catenaryMaintenanceKM;
     final String pantographMaintenanceKM;
@@ -20,7 +20,7 @@ abstract class HybridTrainMaintenanceScheduleContract extends TrainMaintenanceSc
     private String circuitBreakerNextMaintenanceDate;
     private String circuitBreakerLastMaintenanceDate;
 
-    HybridTrainMaintenanceScheduleContract(String catenaryMaintenanceKM, String pantographMaintenanceKM, String circuitBreakerMaintenanceKM, String catenaryNextMaintenanceDate, String pantographNextMaintenanceDate, String circuitBreakerNextMaintenanceDate) {
+    ElectricTrainMaintenanceScheduleContract(String catenaryMaintenanceKM, String pantographMaintenanceKM, String circuitBreakerMaintenanceKM, String catenaryNextMaintenanceDate, String pantographNextMaintenanceDate, String circuitBreakerNextMaintenanceDate) {
         this.catenaryMaintenanceKM = catenaryMaintenanceKM;
         this.pantographMaintenanceKM = pantographMaintenanceKM;
         this.circuitBreakerMaintenanceKM = circuitBreakerMaintenanceKM;
@@ -96,7 +96,7 @@ abstract class HybridTrainMaintenanceScheduleContract extends TrainMaintenanceSc
         this.circuitBreakerNextMaintenanceDate = circuitBreakerNextMaintenanceDate;
     }
 
-    @Override
+       @Override
     public String getCircuitBreakerLastMaintenanceDate() {
         return this.circuitBreakerLastMaintenanceDate;
     }
@@ -105,6 +105,4 @@ abstract class HybridTrainMaintenanceScheduleContract extends TrainMaintenanceSc
     public void setCircuitBreakerLastMaintenanceDate(String circuitBreakerLastMaintenanceDate) {
         this.circuitBreakerLastMaintenanceDate = circuitBreakerLastMaintenanceDate;
     }
-    
-    
 }

@@ -2,15 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.business.contract.gps;
+package com.business.contract.vehicle.routeassignment;
 
 /**
  *
  * @author davey
  */
-public interface GPSBehaviourContract {
-    
-    
-    public String sendCoordinates();
+public class RouteAssignment {
     
 }

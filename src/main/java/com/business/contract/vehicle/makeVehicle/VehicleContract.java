@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.business.contract.makeVehicle;
+package com.business.contract.vehicle.makeVehicle;
 
-import com.business.contract.gps.GPSBehaviourContract;
+import com.business.contract.vehicle.gps.GPSBehaviourContract;
 
 /**
  *
@@ -22,7 +22,16 @@ abstract class VehicleContract implements GPSBehaviourContract {
 
     abstract String getCurrentAssignedRoute();
 
-    //TODO: implement GPS coordinate function.
+    
+     //TODO: implement GPS coordinate generation.
+    @Override
+    public String generateCoordinates() {
+
+        return null;
+
+    }
+    
+    //TODO: implement GPS coordinate transmission.
     @Override
     public String sendCoordinates() {
 
