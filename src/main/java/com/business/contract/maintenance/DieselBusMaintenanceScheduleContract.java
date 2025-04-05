@@ -76,37 +76,43 @@ abstract class DieselBusMaintenanceScheduleContract extends BusMaintenanceSchedu
         return this.busAxleBearingBNextMaintenanceDate;
     }
 
-
-    private void setbrakesNextMaintenanceDate(String brakesNextMaintenanceDate){
+   @Override
+    public void setBrakesNextMaintenanceDate(String brakesNextMaintenanceDate){
         this.brakesNextMaintenanceDate = brakesNextMaintenanceDate;
     }
     
-    private void setbrakesLastMaintenanceDate(String brakesLastMaintenanceDate){
+    @Override
+    public void setBrakesLastMaintenanceDate(String brakesLastMaintenanceDate){
         this.brakesLastMaintenanceDate = brakesLastMaintenanceDate;
     }
     
-    private void setTiresNextMaintenanceDate(String tiresNextMaintenanceDate){
+    @Override
+    public void setTiresNextMaintenanceDate(String tiresNextMaintenanceDate){
         this.tiresNextMaintenanceDate = tiresNextMaintenanceDate;
     }
     
-      private void setTiresLastMaintenanceDate(String tiresLastMaintenanceDate){
+    @Override
+      public void setTiresLastMaintenanceDate(String tiresLastMaintenanceDate){
         this.tiresLastMaintenanceDate = tiresLastMaintenanceDate;
     }
     
     
-    private void setAxleBearingANextMaintenanceDate(String busAxleBearingANextMaintenanceDate){
+    @Override
+    public void setAxleBearingANextMaintenanceDate(String busAxleBearingANextMaintenanceDate){
         this.busAxleBearingANextMaintenanceDate = busAxleBearingANextMaintenanceDate;
     }
     
-     private void setAxleBearingALastMaintenanceDate(String busAxleBearingANextMaintenanceDate){
+       @Override
+     public void setAxleBearingALastMaintenanceDate(String busAxleBearingANextMaintenanceDate){
         this.busAxleBearingANextMaintenanceDate = busAxleBearingANextMaintenanceDate;
     }
-    
-      private void setAxleBearingBNextMaintenanceDate(String busAxleBearingBNextMaintenanceDate){
+       @Override
+      public void setAxleBearingBNextMaintenanceDate(String busAxleBearingBNextMaintenanceDate){
         this.busAxleBearingBNextMaintenanceDate = busAxleBearingBNextMaintenanceDate;
     }
     
-     private void setAxleBearingBLastMaintenanceDate(String busAxleBearingBNextMaintenanceDate){
+      @Override
+     public void setAxleBearingBLastMaintenanceDate(String busAxleBearingBNextMaintenanceDate){
         this.busAxleBearingBNextMaintenanceDate = busAxleBearingBNextMaintenanceDate;
     }
     

@@ -17,13 +17,28 @@ abstract class BusMaintenanceScheduleContract {
     abstract String getAxleBearingAMaintenanceKM();
 
     abstract String getAxleBearingBMaintenanceKM();
+    
+    
 
-    abstract String getBrakesNextMaintenanceDate();
+    abstract public String getBrakesNextMaintenanceDate();
+        abstract protected void setBrakesNextMaintenanceDate(String brakesNextMaintenanceDate);
+            abstract public String getBrakesLastMaintenanceDate();
+                abstract protected void setBrakesLastMaintenanceDate(String brakesLastMaintenanceDate);
 
-    abstract String getTiresNextMaintenanceDate();
+     abstract public String getTiresNextMaintenanceDate();
+        abstract  protected void setTiresNextMaintenanceDate(String tiresNextMaintenanceDate);
+            abstract public String getTiresLastMaintenanceDate();
+                abstract protected void setTiresLastMaintenanceDate(String tiresLastMaintenanceDate);
 
-    abstract String getAxleBearingANextMaintenanceDate();
-
-    abstract String getAxleBearingBNextMaintenanceDate();
+        abstract public String getAxleBearingANextMaintenanceDate();
+        abstract protected void setAxleBearingANextMaintenanceDate(String busAxleBearingANextMaintenanceDate);
+            abstract public String getAxleBearingALastMaintenanceDate();
+                abstract protected void setAxleBearingALastMaintenanceDate(String busAxleBearingALastMaintenanceDate);
+                
+                
+        abstract String getAxleBearingBNextMaintenanceDate();
+        abstract protected void setAxleBearingBNextMaintenanceDate(String busAxleBearingBNextMaintenanceDate);
+            abstract String getAxleBearingBLastMaintenanceDate();
+                abstract protected void setAxleBearingBLastMaintenanceDate(String busAxleBearingBLastMaintenanceDate);
 
 }

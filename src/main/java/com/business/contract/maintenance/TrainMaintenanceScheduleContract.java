@@ -20,25 +20,25 @@ abstract class TrainMaintenanceScheduleContract {
     
     abstract String getCatenaryNextMaintenanceDate();
 
-    abstract void setCatenaryNextMaintenanceDate(String catenaryNextMaintenanceDate);
+    abstract protected void setCatenaryNextMaintenanceDate(String catenaryNextMaintenanceDate);
     abstract String getCatenaryLastMaintenanceDate();
 
-    abstract void setCatenaryLastMaintenanceDate(String catenaryLastMaintenanceDate);
+    abstract protected void setCatenaryLastMaintenanceDate(String catenaryLastMaintenanceDate);
     
     
     abstract String getPantographNextMaintenanceDate();
-    abstract void setPantographNextMaintenanceDate(String pantographNextMaintenanceDate);
+    abstract protected void setPantographNextMaintenanceDate(String pantographNextMaintenanceDate);
     abstract String getPantographLastMaintenanceDate();
-    abstract void setPantographLastMaintenanceDate(String pantographLastMaintenanceDate);
+    abstract protected void setPantographLastMaintenanceDate(String pantographLastMaintenanceDate);
     
     
     abstract String getCircuitBreakerNextMaintenanceDate();
 
-    abstract void setCircuitBreakerNextMaintenanceDate(String circuitBreakerNextMaintenanceDate);
+    abstract protected void setCircuitBreakerNextMaintenanceDate(String circuitBreakerNextMaintenanceDate);
     
     abstract String getCircuitBreakerLastMaintenanceDate();
 
-    abstract void setCircuitBreakerLastMaintenanceDate(String circuitBreakerLastMaintenanceDate);
+    abstract protected void setCircuitBreakerLastMaintenanceDate(String circuitBreakerLastMaintenanceDate);
     
     
 
