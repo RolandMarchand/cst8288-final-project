@@ -8,7 +8,9 @@ package com.business.contract.observer;
  *
  * @author D. Santos
  */
-class SubscriberList { 
+abstract class SubscriberClass { 
+
+    abstract void update(EventUi eventUi);
     
     
     

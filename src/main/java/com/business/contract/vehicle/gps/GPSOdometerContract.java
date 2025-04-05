@@ -13,28 +13,22 @@ import java.util.HashMap;
  */
 public interface GPSOdometerContract {
     
-    public void gpsOverallCoordinator();
+    abstract void gpsOverallCoordinator();
     
-    public void reportCoordinates();
+
+    abstract void simulateVehicleActivity(boolean vehicleRunning);
     
-    public void reportVehicleSpeed();
+    abstract void simulateVehicleLattitude(boolean vehicleRunning);
     
-    public void reportTime();
+    abstract void simulateVehicleLongitude(boolean vehicleRunning);
     
-    public void simulateVehicleActivity();
+    abstract void simulateClockTime();
     
-    public void simulateVehicleLattitude();
+    abstract void simulateFuelEnergyLevel(boolean useFuel, double fuelTank);
     
-    public void simulateVehicleLongitude();
+    abstract void calculateFuelEfficiency(boolean vehicleRunning, HashMap fuelChart, double fuelConsumptionRate);
     
-    public void simulateClockTime();
-    
-    public void simulateFuelEnergyLevel();
-    
-    public void calculateFuelEfficiency();
-    
-    public void calculateEnergyEfficiency();
-    
-    public void sendFuelAlert();
+
+    abstract void sendFuelAlert(boolean vehicleRunning, double fuelEfficiencyPercentage);
    
 }
