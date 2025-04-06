@@ -1,0 +1,53 @@
+Route 61 - Stittsville - Tunney's Pasture
+Tunney’s Pasture B|45.403394|-75.736434
+Dominion 1A|45.392315|-75.760743
+Lincoln Fields 1A|45.366296|-75.783439
+Pinecrest A|45.350487|-75.791700
+Bayshore A|45.345641|-75.809977
+Eagleson 3A|45.317824|-75.884481
+Katimavik / Eagleson|45.314389|-75.883332
+Katimavik / Hearst|45.314927|-75.886260
+Katimavik / Peary|45.315706|-75.888815
+Katimavik / Beaufort|45.314514|-75.891481
+
+Route 75 - Tunney's Pasture - Cambrian
+Tunney’s Pasture F|45.403670|-75.737352
+Dominion 1A|45.392315|-75.760743
+Lincoln Fields 1B|45.366179|-75.783466
+Queensway Station 1A|45.359097|-75.772106
+Iris Station 1A|45.355828|-75.770483
+Baseline Station 1D|45.346610|-75.761318
+Woodroffe / David|45.343490|-75.757542
+Woodroffe / Tallwood|45.341522|-75.756559
+Woodroffe / Norice|45.338890|-75.754629
+Woodroffe / Knoxdale|45.333447|-75.751996
+
+Route 97 - Hurdman - Airport
+Hurdman Station C|45.412110|-75.666320
+Lycée Claudel Station 1A|45.406630|-75.664470
+Smyth Station 1A|45.401200|-75.666850
+Billings Bridge Station 1A|45.384580|-75.676730
+Heron Station 1A|45.378940|-75.679750
+Walkley Transitway|45.373000|-75.684000
+Greenboro Station B|45.360090|-75.658800
+South Keys Station 1C|45.354000|-75.655000
+Airport/Uplands Drive|45.328720|-75.654050
+Ottawa Airport (Terminal stop)|45.322240|-75.665880
+
+Route 7 - St-Laurent - Carleton U
+St-Laurent Station D|45.421400|-75.631130
+St-Laurent / Hemlock|45.445300|-75.639500
+Beechwood / St. Charles|45.441160|-75.673620
+Rideau / Dalhousie|45.429450|-75.690290
+Rideau Centre (Rideau A)|45.425840|-75.690770
+Bank / Gladstone|45.411360|-75.690520
+Bank / Sunnyside|45.394430|-75.691300
+Carleton U (Campus stop A)|45.387540|-75.697930
+
+Route 88 - Terry Fox - Hurdman
+Terry Fox Station|45.309500|-75.907000
+Katimavik / Castlefrank|45.309900|-75.898990
+Eagleson / Hazeldean|45.301350|-75.875160
+Iris Station|45.355830|-75.770480
+Hurdman Station|45.412140|-75.665560
+
