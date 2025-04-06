@@ -34,25 +34,25 @@ public class MainController extends HttpServlet {
                 url = "/LoginPage-URL";
                 break;
             case "attemptUserLogin":
-                url = "/ValidateLoginServlet-URL";
+                url = "/ValidateLoginServlet-URL";//USER SENDS LOGIN FORM FROM LOGINPAGE-URL
                 break; 
             case "register":
                 url = "/RegistrationPage-URL";
                 break; 
-            case "attemptUserRegistration"://USER SENDS USER REGISTRATION FORM
+            case "attemptUserRegistration"://USER SENDS USER REGISTRATION FORM FROM REGISTRATIONPAGE-URL
                 url = "/ValidateNewUserServlet-URL";
                 break;
             case "addNewVehicle":
                 url = "/AddVehiclePage-URL";
                 break;    
-            case "attemptVehicleRegistration"://USER SENDS VEHICLE REGISTRATION FORM
+            case "attemptVehicleRegistration"://USER SENDS VEHICLE REGISTRATION FORM FROM ADDVEHICLE-URL
                 url = "/ValidateNewVehicleServlet-URL";
                 break;
             case "deleteVehicle":
                 url = "/DeleteVehiclePage-URL";
                 break;    
             case "attemptVehicleDeletion":
-                url = "/DeleteVehiclePage-URL";//TEMPORARY
+                url = "/DeleteVehiclePage-URL";//USER SENDS DELETE VEHICLE FORM FROM DELETEVEHICLEPAGE-URL
                 break;  
             case "vehicleManagement":
                 url = "/VehicleManagementPage-URL";
@@ -61,10 +61,13 @@ public class MainController extends HttpServlet {
                 url = "/FuelReportPage-URL";
                 break;
             case "getFuelReports":
-                url = "/PrintReports-URL";
+                url = "/PrintReports-URL";//USER REQUEST FORM FROM FUELREPORTPAGE-URL
                 break;
             case "maintenanceDashboard":
                 url = "/MaintenanceDashboardPage-URL";
+                break;
+            case "getMaintenanceReports":
+                url = "/PrintMaintenanceReports-URL";
                 break;
             case "gpsTracking":
                 url = "/GpsTrackingPage-URL";

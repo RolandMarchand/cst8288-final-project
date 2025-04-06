@@ -52,6 +52,18 @@
         <servlet-name>PrintReports</servlet-name>
         <servlet-class>business.PrintReports</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MaintenanceDashboard</servlet-name>
+        <servlet-class>presentation.MaintenanceDashboard</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ValidateVehicleDeletion</servlet-name>
+        <servlet-class>business.ValidateVehicleDeletion</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PrintMaintenanceReportsServlet</servlet-name>
+        <servlet-class>business.PrintMaintenanceReportsServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>WelcomePage</servlet-name>
         <url-pattern>/WelcomePage-URL</url-pattern>
@@ -103,6 +115,18 @@
     <servlet-mapping>
         <servlet-name>PrintReports</servlet-name>
         <url-pattern>/PrintReports-URL</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MaintenanceDashboard</servlet-name>
+        <url-pattern>/MaintenanceDashboard-URL</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ValidateVehicleDeletion</servlet-name>
+        <url-pattern>/ValidateVehicleDeletion-URL</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PrintMaintenanceReportsServlet</servlet-name>
+        <url-pattern>/PrintMaintenanceReportsServlet-URL</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
