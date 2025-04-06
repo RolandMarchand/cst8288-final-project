@@ -10,98 +10,88 @@ package com.business.contract.vehicle.maintenance;
  */
 abstract class ElectricTrainMaintenanceScheduleContract extends TrainMaintenanceScheduleContract {
 
-    final String catenaryMaintenanceKM;
-    final String pantographMaintenanceKM;
-    final String circuitBreakerMaintenanceKM;
-    private String catenaryNextMaintenanceDate;
-    private String catenaryLastMaintenanceDate;
-    private String pantographNextMaintenanceDate;
-    private String pantographLastMaintenanceDate;
-    private String circuitBreakerNextMaintenanceDate;
-    private String circuitBreakerLastMaintenanceDate;
-
-    ElectricTrainMaintenanceScheduleContract(String catenaryMaintenanceKM, String pantographMaintenanceKM, String circuitBreakerMaintenanceKM, String catenaryNextMaintenanceDate, String pantographNextMaintenanceDate, String circuitBreakerNextMaintenanceDate) {
-        this.catenaryMaintenanceKM = catenaryMaintenanceKM;
-        this.pantographMaintenanceKM = pantographMaintenanceKM;
-        this.circuitBreakerMaintenanceKM = circuitBreakerMaintenanceKM;
-        this.catenaryNextMaintenanceDate = catenaryNextMaintenanceDate;
-        this.pantographNextMaintenanceDate = pantographNextMaintenanceDate;
-        this.circuitBreakerNextMaintenanceDate = circuitBreakerNextMaintenanceDate;
-
+   public ElectricTrainMaintenanceScheduleContract() {
     }
+
+       //get kilometre wear and tear per part.
+    @Override
+    public abstract String getCatenaryMaintenaceKM();
 
     @Override
-    public String getCatenaryMaintenaceKM() {
-        return this.catenaryMaintenanceKM;
-    }
+    public abstract String getPantographMaintenanceKM();
 
     @Override
-    public String getPantographMaintenanceKM() {
-        return this.pantographMaintenanceKM;
-    }
+    public abstract String getCircuitBreakersMaintenanceKM();
+
+    //set kilometre wear and tear per part.
+    @Override
+    public abstract void setCatenaryMaintenaceKM(String catenaryMaintenanceKM);
 
     @Override
-    public String getCircuitBreakersMaintenanceKM() {
-        return this.circuitBreakerMaintenanceKM;
-    }
+    public abstract void setPantographMaintenanceKM(String pantographMaintenanceKM);
 
     @Override
-    public String getCatenaryNextMaintenanceDate() {
-        return this.catenaryNextMaintenanceDate;
-    }
+    public abstract void setCircuitBreakersMaintenanceKM(String circuitBreakerMaintenanceKM);
+
+    //get parts next maintenance date
+    @Override
+    public abstract String getCatenaryNextMaintenanceDate();
 
     @Override
-    public void setCatenaryNextMaintenanceDate(String catenaryNextMaintenanceDate) {
-        this.catenaryNextMaintenanceDate = catenaryNextMaintenanceDate;
-    }
+    public abstract String getPantographNextMaintenanceDate();
 
     @Override
-    public String getCatenaryLastMaintenanceDate() {
-        return this.catenaryLastMaintenanceDate;
-    }
+    public abstract String getCircuitBreakerNextMaintenanceDate();
+
+    //set parts next maintenance date. 
+    @Override
+    public abstract void setCatenaryNextMaintenanceDate(String catenaryNextMaintenanceDate);
 
     @Override
-    public void setCatenaryLastMaintenanceDate(String catenaryLastMaintenanceDate) {
-        this.catenaryLastMaintenanceDate = catenaryLastMaintenanceDate;
-    }
+    public abstract void setPantographNextMaintenanceDate(String pantographLastMaintenanceDate);
 
     @Override
-    public String getPantographNextMaintenanceDate() {
-        return this.pantographNextMaintenanceDate;
-    }
+    public abstract void setCircuitBreakerNextMaintenanceDate(String circuitBreakerNextMaintenanceDate);
+
+    //get parts last maintenance date.
+    @Override
+    public abstract String getCatenaryLastMaintenanceDate();
 
     @Override
-    public void setPantographNextMaintenanceDate(String pantographNextMaintenanceDate) {
-        this.pantographNextMaintenanceDate = pantographNextMaintenanceDate;
-    }
+    public abstract String getPantographLastMaintenanceDate();
 
     @Override
-    public String getPantographLastMaintenanceDate() {
-        return this.pantographLastMaintenanceDate;
-    }
+    public abstract String getCircuitBreakerLastMaintenanceDate();
+
+    //set parts last maintenance date
+    @Override
+    public abstract void setCatenaryLastMaintenanceDate(String catenaryLastMaintenanceDate);
 
     @Override
-    public void setPantographLastMaintenanceDate(String pantographLastMaintenanceDate) {
-        this.pantographLastMaintenanceDate = pantographLastMaintenanceDate;
-    }
+    public abstract void setPantographLastMaintenanceDate(String pantographNextMaintenanceDate);
 
     @Override
-    public String getCircuitBreakerNextMaintenanceDate() {
-        return this.circuitBreakerNextMaintenanceDate;
-    }
-
+    public abstract void setCircuitBreakerLastMaintenanceDate(String circuitBreakerLastMaintenanceDate);
+    
+     //get next service overhaul dates
     @Override
-    public void setCircuitBreakerNextMaintenanceDate(String circuitBreakerNextMaintenanceDate) {
-        this.circuitBreakerNextMaintenanceDate = circuitBreakerNextMaintenanceDate;
-    }
+    public abstract String getNextServiceOverhaulDate();
 
+    //set next service overhaul date.
     @Override
-    public String getCircuitBreakerLastMaintenanceDate() {
-        return this.circuitBreakerLastMaintenanceDate;
-    }
+    public abstract void setNextServiceOverhaulDate(String nextServiceOverhaulDate);
 
+    //get last service overhaul date.
     @Override
-    public void setCircuitBreakerLastMaintenanceDate(String circuitBreakerLastMaintenanceDate) {
-        this.circuitBreakerLastMaintenanceDate = circuitBreakerLastMaintenanceDate;
-    }
+    public abstract String getLastServiceOverhaulDate();
+
+    //set last service overhaul date.
+    @Override
+    public abstract void setLastServiceOverhaulDate(String LastServiceOverhaulDate);
+
+    //send maintenance alert
+    @Override
+    public abstract void sendMaintenanceAlert();
+    
+
 }
