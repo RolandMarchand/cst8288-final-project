@@ -2,8 +2,6 @@ package com.business.contract.vehicle.routeassignment;
 
 import com.business.contract.controller.ObserverPattern;
 import com.business.contract.vehicle.routes.TransitRouteBuilder;
-import jakarta.json.JsonArray;
-import jakarta.json.JsonObject;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,10 +18,10 @@ public class RouteAssignment {
     public RouteAssignment() {
     }
 
-    public ArrayList<JsonArray> transitStops;
+    public ArrayList<String[]> transitStops;
     public ArrayList<String> transitRouteNames;
 
-    public ArrayList<JsonArray> loadRouteInfo(ObserverPattern observer) throws IOException {
+    public ArrayList<String[]> loadRouteInfo(ObserverPattern observer) throws IOException {
 
         TransitRouteBuilder transitRouteBuilder = new TransitRouteBuilder();
         transitRouteBuilder.loadTransitRoutes();
@@ -54,9 +52,19 @@ public class RouteAssignment {
      * @param routeName
      * @return
      */
-    public ArrayList<JsonArray> routeSelection(String routeName) {
-        ArrayList<JsonArray> returnRoute = new ArrayList<>();
+    public ArrayList<String[]> routeSelection(String routeName) {
+        ArrayList<String[]> returnRoute;
+        returnRoute = new ArrayList<String[]>();
+        String[] routeChecker = new String[4];
         for (int i = 0; i < transitStops.size(); i++) {
+            routeChecker = transitStops.get(i);
+            if (routeChecker[0].equals(routeName)) {
+                
+            returnRoute.add(routeChecker);
+               
+            }
+        }
+        return returnRoute;
 
             JsonArray pull = transitStops.get(i);
             JsonObject check = pull.getJsonObject(i);
