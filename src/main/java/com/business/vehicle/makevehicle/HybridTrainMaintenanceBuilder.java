@@ -6,14 +6,14 @@ import com.business.contract.controller.VehicleRegistrationMediator;
  *
  * @author D. Santos
  */
-public class ElectricTrainMaintenanceBuilder extends ElectricTrainMaintenanceSchedule {
+public class HybridTrainMaintenanceBuilder extends HybridTrainMaintenanceSchedule {
 
     VehicleRegistrationMediator mediatorEvent;
 
-    public ElectricTrainMaintenanceBuilder(VehicleRegistrationMediator mediatorevent) {
+    public HybridTrainMaintenanceBuilder(VehicleRegistrationMediator mediatorevent) {
     }
 
-    public ElectricTrainMaintenanceSchedule buildElectricTrainMaintenance(VehicleRegistrationMediator mediatorevent) {
+    public HybridTrainMaintenanceSchedule buildHybridTrainMaintenance(VehicleRegistrationMediator mediatorevent) {
 
         String catenaryMaintenanceKM = mediatorevent.catenaryMaintenanceKM;
         String pantographMaintenanceKM = mediatorevent.pantographMaintenanceKM;
@@ -28,16 +28,16 @@ public class ElectricTrainMaintenanceBuilder extends ElectricTrainMaintenanceSch
         String nextServiceOverhaulDate = mediatorevent.nextServiceOverhaulDate;
         String lastServiceOverhaulDate = mediatorevent.lastServiceOverhaulDate;
 
-        ElectricTrainMaintenanceSchedule electricTrainMaintenanceSchedule = new ElectricTrainMaintenanceSchedule();
+        HybridTrainMaintenanceSchedule hybridTrainMaintenanceSchedule = new HybridTrainMaintenanceSchedule();
 
-        electricTrainMaintenanceSchedule.setCatenaryMaintenaceKM(catenaryMaintenanceKM);
-        electricTrainMaintenanceSchedule.setPantographMaintenanceKM(pantographMaintenanceKM);
-        electricTrainMaintenanceSchedule.setCircuitBreakersMaintenanceKM(circuitBreakersMaintenanceKM);
-        electricTrainMaintenanceSchedule.setCatenaryNextMaintenanceDate(catenaryNextMaintenanceDate);
-        electricTrainMaintenanceSchedule.setPantographNextMaintenanceDate(pantographNextMaintenanceDate);
-        electricTrainMaintenanceSchedule.setCircuitBreakerNextMaintenanceDate(circuitBreakersNextMaintenanceDate);
-        electricTrainMaintenanceSchedule.setNextServiceOverhaulDate(nextServiceOverhaulDate);
+        hybridTrainMaintenanceSchedule.setCatenaryMaintenaceKM(catenaryMaintenanceKM);
+        hybridTrainMaintenanceSchedule.setPantographMaintenanceKM(pantographMaintenanceKM);
+        hybridTrainMaintenanceSchedule.setCircuitBreakersMaintenanceKM(circuitBreakersMaintenanceKM);
+        hybridTrainMaintenanceSchedule.setCatenaryNextMaintenanceDate(catenaryNextMaintenanceDate);
+        hybridTrainMaintenanceSchedule.setPantographNextMaintenanceDate(pantographNextMaintenanceDate);
+        hybridTrainMaintenanceSchedule.setCircuitBreakerNextMaintenanceDate(circuitBreakersNextMaintenanceDate);
+        hybridTrainMaintenanceSchedule.setNextServiceOverhaulDate(nextServiceOverhaulDate);
 
-        return electricTrainMaintenanceSchedule;
+        return hybridTrainMaintenanceSchedule;
     }
 }

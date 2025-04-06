@@ -4,26 +4,26 @@
  */
 package com.business.vehicle.makevehicle;
 
-import com.business.contract.vehicle.makeVehicle.DieselBusContract;
-import com.business.contract.vehicle.vehicleparts.BusPartsContract;
+import com.business.contract.vehicle.makeVehicle.ElectricTrainContract;
+import com.business.contract.vehicle.vehicleparts.TrainPartsContract;
 import com.business.vehicle.gpsimpl.VehicleSimulator;
 
 /**
  *
  * @author D. Santos
  */
-public class ElectricTrain extends DieselBusContract {
+public class ElectricTrain extends ElectricTrainContract {
 
     private String fuelEnergyType;
     private String vehicleRegistrationNumber;
     private String consumptionRate;
     private String maxPassengers;
     private String currentAssignedRoute;
-    public BusPartsContract busPartsContract;
-    public DieselBusMaintenanceSchedule dieselBusMaintenanceSchedule;
+    public TrainPartsContract trainPartsContract;
+    public ElectricTrainMaintenanceSchedule electricTrainMaintenanceSchedule;
     public VehicleSimulator vehicleSimulator;
 
-    public ElectricTrain(BusPartsContract busParts, DieselBusMaintenanceSchedule dieselBusMaintenanceSchedule, VehicleSimulator vehicleSimulator) {
+    public ElectricTrain(TrainPartsContract trainParts, ElectricTrainMaintenanceSchedule electricTrainMaintenanceSchedule, VehicleSimulator vehicleSimulator) {
     }
 
     @Override
@@ -51,8 +51,8 @@ public class ElectricTrain extends DieselBusContract {
         return this.currentAssignedRoute;
     }
 
-    public BusPartsContract getCurrentBusPartsContract() {
-        return this.busPartsContract;
+    public TrainPartsContract getCurrentTrainPartsContract() {
+        return this.trainPartsContract;
     }
 
     @Override
@@ -80,12 +80,12 @@ public class ElectricTrain extends DieselBusContract {
         this.currentAssignedRoute = currentAssignedRoute;
     }
 
-    public void setMaintenanceSchedule(DieselBusMaintenanceSchedule dieselBusMaintenanceSchedule) {
-        this.dieselBusMaintenanceSchedule = dieselBusMaintenanceSchedule;
+    public void setMaintenanceSchedule(ElectricTrainMaintenanceSchedule electricTrainMaintenanceSchedule) {
+        this.electricTrainMaintenanceSchedule = electricTrainMaintenanceSchedule;
     }
 
-    public void setBusParts(BusPartsContract busparts) {
-        this.busPartsContract = busparts;
+    public void setTrainParts(TrainPartsContract trainparts) {
+        this.trainPartsContract = trainparts;
     }
 
 }

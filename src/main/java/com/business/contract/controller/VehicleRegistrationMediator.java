@@ -19,6 +19,16 @@ public class VehicleRegistrationMediator implements Mediator {
 
     private static VehicleRegistrationMediator concreteMediator;
 
+    public String catenaryMaintenanceKM;
+    public String pantographMaintenanceKM;
+    public String circuitBreakersMaintenanceKM;
+    public String catenaryNextMaintenanceDate;
+    public String pantographNextMaintenanceDate;
+    public String circuitBreakersNextMaintenanceDate;
+    public String catenaryLastMaintenanceDate;
+    public String pantographLastMaintenanceDate;
+    public String circuitBreakersLastMaintenanceDate;
+
     public String vehicleType;
     public String fuelEnergyType;
     public String vehicleRegistrationNumber;
@@ -56,8 +66,9 @@ public class VehicleRegistrationMediator implements Mediator {
     }
 
     /**
-     * Register the viewer class instance where the request comes from.
-     * TODO: Connect points.
+     * Register the viewer class instance where the request comes from. TODO:
+     * Connect points.
+     *
      * @param object
      */
     public void setView(String object) {
@@ -81,11 +92,11 @@ public class VehicleRegistrationMediator implements Mediator {
         //TODO: Make connection.
         //this.Object.handleIncoming(mediatorEvent);
     }
-    
+
     //TODO: determine steps for processVehicleRegistration.
     @Override
     public String processVehicleRegistration(VehicleRegistrationMediator mediatorEvent) {
         String object = new String();
-    return object;
+        return object;
     }
 }
