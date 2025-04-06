@@ -14,9 +14,10 @@ import javax.swing.JButton;
  */
 public interface Mediator {
 
-    public  void notifySender(VehicleRegistrationMediator mediatorEvent);
+    public  void sendEvent(VehicleRegistrationMediator mediatorEvent);
     
-    public void notifyReceiver(VehicleRegistrationMediator mediatorEvent);
+    public void receiveEvent(VehicleRegistrationMediator mediatorEvent);
     
+    public String processVehicleRegistration(VehicleRegistrationMediator mediatorEvent);
     
 }

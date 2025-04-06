@@ -10,10 +10,10 @@ package com.business.contract.vehicle.maintenance;
  */
 public abstract class DieselBusMaintenanceScheduleContract extends BusMaintenanceScheduleContract {
 
+    public DieselBusMaintenanceScheduleContract() {
+    }
 
-   public DieselBusMaintenanceScheduleContract(){}
-
-   //get kilometre wear and tear per part.
+    //get kilometre wear and tear per part.
     @Override
     public abstract String getBrakeMaintenanceKM();
 
@@ -26,8 +26,20 @@ public abstract class DieselBusMaintenanceScheduleContract extends BusMaintenanc
     @Override
     public abstract String getAxleBearingBMaintenanceKM();
 
-    
-    //get next maintenance dates for parts. 
+    //set kilometre wear and tear per part.
+    @Override
+    public abstract void setBrakeMaintenanceKM(String brakeMaintenanceKM);
+
+    @Override
+    public abstract void setTiresMaintenanceKM(String tiresMaintenanceKM);
+
+    @Override
+    public abstract void setAxleBearingAMaintenanceKM(String axleAMaintenanceKM);
+
+    @Override
+    public abstract void setAxleBearingBMaintenanceKM(String axleBMaintenanceKM);
+
+    //get parts next maintenance date
     @Override
     public abstract String getBrakesNextMaintenanceDate();
 
@@ -39,49 +51,64 @@ public abstract class DieselBusMaintenanceScheduleContract extends BusMaintenanc
 
     @Override
     public abstract String getAxleBearingBNextMaintenanceDate();
-    
-    
-    
-//set next maintenance days for parts.
+
+    //set parts next maintenance date. 
     @Override
     public abstract void setBrakesNextMaintenanceDate(String brakesNextMaintenanceDate);
-
-    @Override
-    public abstract void setBrakesLastMaintenanceDate(String brakesLastMaintenanceDate);
 
     @Override
     public abstract void setTiresNextMaintenanceDate(String tiresNextMaintenanceDate);
 
     @Override
-    public abstract void setTiresLastMaintenanceDate(String tiresLastMaintenanceDate);
-
-    @Override
     public abstract void setAxleBearingANextMaintenanceDate(String busAxleBearingANextMaintenanceDate);
-
-    
-    //set last maintenance days for parts.
-    @Override
-    public abstract void setAxleBearingALastMaintenanceDate(String busAxleBearingANextMaintenanceDate);
 
     @Override
     public abstract void setAxleBearingBNextMaintenanceDate(String busAxleBearingBNextMaintenanceDate);
 
+    //get parts last maintenance date.
     @Override
-    public abstract void setAxleBearingBLastMaintenanceDate(String busAxleBearingBNextMaintenanceDate);
-    
-    
-    //set/get service overhaul.
+    public abstract String getBrakesLastMaintenanceDate();
 
+    @Override
+    public abstract String getTiresLastMaintenanceDate();
+
+    @Override
+    public abstract String getAxleBearingALastMaintenanceDate();
+
+    @Override
+    public abstract String getAxleBearingBLastMaintenanceDate();
+
+    //set parts last maintenance date
+    @Override
+    public abstract void setBrakesLastMaintenanceDate(String brakesLastMaintenanceDate);
+
+    @Override
+    public abstract void setTiresLastMaintenanceDate(String tiresLastMaintenanceDate);
+
+    @Override
+    public abstract void setAxleBearingALastMaintenanceDate(String busAxleBearingALastMaintenanceDate);
+
+    @Override
+    public abstract void setAxleBearingBLastMaintenanceDate(String busAxleBearingBLastMaintenanceDate);
+
+    //get next service overhaul dates
     @Override
     public abstract String getNextServiceOverhaulDate();
 
+    //set next service overhaul date.
     @Override
     public abstract void setNextServiceOverhaulDate(String nextServiceOverhaulDate);
 
+    //get last service overhaul date.
     @Override
     public abstract String getLastServiceOverhaulDate();
 
+    //set last service overhaul date.
     @Override
-    public abstract void setLastServiceOverhaulDate(String lastServiceOverhaulDate);
+    public abstract void setLastServiceOverhaulDate(String LastServiceOverhaulDate);
+
+    //send maintenance alert
+    @Override
+    public abstract void sendMaintenanceAlert();
 
 }

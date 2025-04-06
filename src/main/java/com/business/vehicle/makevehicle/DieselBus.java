@@ -4,7 +4,6 @@
  */
 package com.business.vehicle.makevehicle;
 
-import static com.business.contract.controller.VehicleRegistrationMediator.busParts;
 import com.business.contract.vehicle.makeVehicle.DieselBusContract;
 import com.business.contract.vehicle.vehicleparts.BusPartsContract;
 import com.business.vehicle.gpsimpl.GpsSimulator;

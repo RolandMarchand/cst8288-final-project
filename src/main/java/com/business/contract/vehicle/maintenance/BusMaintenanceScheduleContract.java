@@ -10,54 +10,73 @@ package com.business.contract.vehicle.maintenance;
  */
 abstract class BusMaintenanceScheduleContract {
 
-    abstract String getBrakeMaintenanceKM();
+    //get kilometre wear and tear per part.
+    public abstract String getBrakeMaintenanceKM();
 
-    abstract String getTiresMaintenanceKM();
+    public abstract String getTiresMaintenanceKM();
 
-    abstract String getAxleBearingAMaintenanceKM();
+    public abstract String getAxleBearingAMaintenanceKM();
 
-    abstract String getAxleBearingBMaintenanceKM();
+    public abstract String getAxleBearingBMaintenanceKM();
 
-    abstract public String getBrakesNextMaintenanceDate();
+    //set kilometre wear and tear per part.
+    public abstract void setBrakeMaintenanceKM(String brakeMaintenanceKM);
 
-    abstract protected void setBrakesNextMaintenanceDate(String brakesNextMaintenanceDate);
+    public abstract void setTiresMaintenanceKM(String tiresMaintenanceKM);
 
-    abstract public String getBrakesLastMaintenanceDate();
+    public abstract void setAxleBearingAMaintenanceKM(String axleAMaintenanceKM);
 
-    abstract protected void setBrakesLastMaintenanceDate(String brakesLastMaintenanceDate);
+    public abstract void setAxleBearingBMaintenanceKM(String axleBMaintenanceKM);
 
-    abstract public String getTiresNextMaintenanceDate();
+    //get parts next maintenance date
+    public abstract String getBrakesNextMaintenanceDate();
 
-    abstract protected void setTiresNextMaintenanceDate(String tiresNextMaintenanceDate);
+    public abstract String getTiresNextMaintenanceDate();
 
-    abstract public String getTiresLastMaintenanceDate();
+    public abstract String getAxleBearingANextMaintenanceDate();
 
-    abstract protected void setTiresLastMaintenanceDate(String tiresLastMaintenanceDate);
+    public abstract String getAxleBearingBNextMaintenanceDate();
 
-    abstract public String getAxleBearingANextMaintenanceDate();
+    //set parts next maintenance date.     
+    public abstract void setBrakesNextMaintenanceDate(String brakesNextMaintenanceDate);
 
-    abstract protected void setAxleBearingANextMaintenanceDate(String busAxleBearingANextMaintenanceDate);
+    public abstract void setTiresNextMaintenanceDate(String tiresNextMaintenanceDate);
 
-    abstract public String getAxleBearingALastMaintenanceDate();
+    public abstract void setAxleBearingANextMaintenanceDate(String busAxleBearingANextMaintenanceDate);
 
-    abstract protected void setAxleBearingALastMaintenanceDate(String busAxleBearingALastMaintenanceDate);
+    public abstract void setAxleBearingBNextMaintenanceDate(String busAxleBearingBNextMaintenanceDate);
 
-    abstract String getAxleBearingBNextMaintenanceDate();
+    //get parts last maintenance date.
+    public abstract String getBrakesLastMaintenanceDate();
 
-    abstract protected void setAxleBearingBNextMaintenanceDate(String busAxleBearingBNextMaintenanceDate);
+    public abstract String getTiresLastMaintenanceDate();
 
-    abstract String getAxleBearingBLastMaintenanceDate();
+    public abstract String getAxleBearingALastMaintenanceDate();
 
-    abstract protected void setAxleBearingBLastMaintenanceDate(String busAxleBearingBLastMaintenanceDate);
+    public abstract String getAxleBearingBLastMaintenanceDate();
 
-    abstract String getNextServiceOverhaulDate();
+    //set parts last maintenance date
+    public abstract void setBrakesLastMaintenanceDate(String brakesLastMaintenanceDate);
 
-    abstract protected void setNextServiceOverhaulDate(String nextServiceOverhaulDate);
+    public abstract void setTiresLastMaintenanceDate(String tiresLastMaintenanceDate);
 
-    abstract String getLastServiceOverhaulDate();
+    public abstract void setAxleBearingALastMaintenanceDate(String busAxleBearingALastMaintenanceDate);
 
-    abstract protected void setLastServiceOverhaulDate(String LastServiceOverhaulDate);
+    public abstract void setAxleBearingBLastMaintenanceDate(String busAxleBearingBLastMaintenanceDate);
 
-    abstract protected void sendMaintenanceAlert();
+    //get next service overhaul dates
+    public abstract String getNextServiceOverhaulDate();
+
+    //set next service overhaul date.
+    public abstract void setNextServiceOverhaulDate(String nextServiceOverhaulDate);
+
+    //get last service overhaul date.
+    public abstract String getLastServiceOverhaulDate();
+
+    //set last service overhaul date.
+    public abstract void setLastServiceOverhaulDate(String LastServiceOverhaulDate);
+
+    //send maintenance alert
+    public abstract void sendMaintenanceAlert();
 
 }
