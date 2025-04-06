@@ -10,34 +10,62 @@ package com.business.contract.vehicle.maintenance;
  */
 abstract class TrainMaintenanceScheduleContract {
 
-    abstract String getCatenaryMaintenaceKM();
+    //get kilometre wear and tear per part.
+    public abstract String getCatenaryMaintenaceKM();
 
-    abstract String getPantographMaintenanceKM();
+    public abstract String getPantographMaintenanceKM();
 
-    abstract String getCircuitBreakersMaintenanceKM();
+    public abstract String getCircuitBreakersMaintenanceKM();
 
-    abstract String getCatenaryNextMaintenanceDate();
+    //set kilometre wear and tear per part.
+    public abstract void setCatenaryMaintenaceKM(String catenaryMaintenanceKM);
 
-    abstract protected void setCatenaryNextMaintenanceDate(String catenaryNextMaintenanceDate);
+    public abstract void setPantographMaintenanceKM(String pantographMaintenanceKM);
 
-    abstract String getCatenaryLastMaintenanceDate();
+    public abstract void setCircuitBreakersMaintenanceKM(String circuitBreakerMaintenanceKM);
 
-    abstract protected void setCatenaryLastMaintenanceDate(String catenaryLastMaintenanceDate);
+    //get parts next maintenance date
+    public abstract String getCatenaryNextMaintenanceDate();
 
-    abstract String getPantographNextMaintenanceDate();
+    public abstract String getPantographNextMaintenanceDate();
 
-    abstract protected void setPantographNextMaintenanceDate(String pantographNextMaintenanceDate);
+    public abstract String getCircuitBreakerNextMaintenanceDate();
 
-    abstract String getPantographLastMaintenanceDate();
+    //set parts next maintenance date. 
+    public abstract void setCatenaryNextMaintenanceDate(String catenaryNextMaintenanceDate);
 
-    abstract protected void setPantographLastMaintenanceDate(String pantographLastMaintenanceDate);
+    public abstract void setPantographNextMaintenanceDate(String pantographLastMaintenanceDate);
 
-    abstract String getCircuitBreakerNextMaintenanceDate();
+    public abstract void setCircuitBreakerNextMaintenanceDate(String circuitBreakerNextMaintenanceDate);
 
-    abstract protected void setCircuitBreakerNextMaintenanceDate(String circuitBreakerNextMaintenanceDate);
+    //get parts last maintenance date.
+    public abstract String getCatenaryLastMaintenanceDate();
 
-    abstract String getCircuitBreakerLastMaintenanceDate();
+    public abstract String getPantographLastMaintenanceDate();
 
-    abstract protected void setCircuitBreakerLastMaintenanceDate(String circuitBreakerLastMaintenanceDate);
+    public abstract String getCircuitBreakerLastMaintenanceDate();
+
+    //set parts last maintenance date
+    public abstract void setCatenaryLastMaintenanceDate(String catenaryLastMaintenanceDate);
+
+    public abstract void setPantographLastMaintenanceDate(String pantographNextMaintenanceDate);
+
+    public abstract void setCircuitBreakerLastMaintenanceDate(String circuitBreakerLastMaintenanceDate);
+    
+     //get next service overhaul dates
+    public abstract String getNextServiceOverhaulDate();
+
+    //set next service overhaul date.
+    public abstract void setNextServiceOverhaulDate(String nextServiceOverhaulDate);
+
+    //get last service overhaul date.
+    public abstract String getLastServiceOverhaulDate();
+
+    //set last service overhaul date.
+    public abstract void setLastServiceOverhaulDate(String LastServiceOverhaulDate);
+
+    //send maintenance alert
+    public abstract void sendMaintenanceAlert();
+    
 
 }
