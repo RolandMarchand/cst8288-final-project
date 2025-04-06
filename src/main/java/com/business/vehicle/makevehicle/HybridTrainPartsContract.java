@@ -8,6 +8,6 @@ package com.business.vehicle.makevehicle;
  *
  * @author drssa
  */
-class HybridTrainBuilder {
+class HybridTrainPartsContract {
     
 }
