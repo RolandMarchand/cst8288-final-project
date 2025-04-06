@@ -39,13 +39,13 @@ public class MainController extends HttpServlet {
             case "register":
                 url = "/RegistrationPage-URL";
                 break; 
-            case "attemptUserRegistration":
+            case "attemptUserRegistration"://USER SENDS USER REGISTRATION FORM
                 url = "/ValidateNewUserServlet-URL";
                 break;
             case "addNewVehicle":
                 url = "/AddVehiclePage-URL";
                 break;    
-            case "attemptVehicleRegistration":
+            case "attemptVehicleRegistration"://USER SENDS VEHICLE REGISTRATION FORM
                 url = "/ValidateNewVehicleServlet-URL";
                 break;
             case "deleteVehicle":
@@ -59,6 +59,9 @@ public class MainController extends HttpServlet {
                 break;
             case "fuelReporting":
                 url = "/FuelReportPage-URL";
+                break;
+            case "getFuelReports":
+                url = "/PrintReports-URL";
                 break;
             case "maintenanceDashboard":
                 url = "/MaintenanceDashboardPage-URL";

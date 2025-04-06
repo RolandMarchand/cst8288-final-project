@@ -44,6 +44,14 @@
         <servlet-name>VehicleManagementPage</servlet-name>
         <servlet-class>presentation.VehicleManagementPage</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>FuelReportPage</servlet-name>
+        <servlet-class>presentation.FuelReportPage</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PrintReports</servlet-name>
+        <servlet-class>business.PrintReports</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>WelcomePage</servlet-name>
         <url-pattern>/WelcomePage-URL</url-pattern>
@@ -87,6 +95,14 @@
     <servlet-mapping>
         <servlet-name>VehicleManagementPage</servlet-name>
         <url-pattern>/VehicleManagementPage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FuelReportPage</servlet-name>
+        <url-pattern>/FuelReportPage-URL</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PrintReports</servlet-name>
+        <url-pattern>/PrintReports-URL</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
