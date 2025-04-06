@@ -6,6 +6,7 @@ package com.business.vehicle.makevehicle;
 
 import com.business.contract.controller.VehicleRegistrationMediator;
 import com.business.contract.vehicle.vehicleparts.BusPartsContract;
+import com.business.vehicle.gpsimpl.VehicleSimulator;
 
 /**
  *
@@ -16,9 +17,10 @@ public class DieselBusBuilder extends DieselBus {
     BusPartsContract busPartsContract;
     DieselBusMaintenanceSchedule dieselBusMaintenanceSchedule; 
     VehicleRegistrationMediator mediatorEvent;
+    VehicleSimulator vehicleSimulator;
     
-    public DieselBusBuilder(VehicleRegistrationMediator mediatorEvent, BusPartsContract busPartsContract, DieselBusMaintenanceSchedule dieselBusMaintenanceSchedule) {
-        super(busPartsContract, dieselBusMaintenanceSchedule);
+    public DieselBusBuilder(VehicleRegistrationMediator mediatorEvent, BusPartsContract busPartsContract, DieselBusMaintenanceSchedule dieselBusMaintenanceSchedule, VehicleSimulator vehicleSimulator) {
+        super(busPartsContract, dieselBusMaintenanceSchedule, vehicleSimulator);
     }
     
     public DieselBus buildDieselBus(VehicleRegistrationMediator mediatorevent, BusPartsContract busPartsContract, DieselBusMaintenanceSchedule dieselBusMaintenanceSchedule)  {
@@ -29,7 +31,7 @@ public class DieselBusBuilder extends DieselBus {
         String maxPassengers = mediatorevent.maxPassengers;
         String currentAssignedRoute = mediatorevent.currentAssignedRoute;
         
-        DieselBus dieselBus = new DieselBus(busPartsContract, dieselBusMaintenanceSchedule);
+        DieselBus dieselBus = new DieselBus(busPartsContract, dieselBusMaintenanceSchedule, vehicleSimulator);
         
         dieselBus.setBusParts(busPartsContract);
         dieselBus.setMaintenanceSchedule(dieselBusMaintenanceSchedule);

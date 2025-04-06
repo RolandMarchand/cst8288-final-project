@@ -73,7 +73,7 @@ public class VehicleRegistrationMediator implements Mediator {
     @Override
     public void sendEvent(VehicleRegistrationMediator mediatorEvent) {
         VehicleFactory vehicleFactory = new VehicleFactory();
-        vehicleFactory.notifyReceiver(mediatorEvent);
+        vehicleFactory.sendEvent(mediatorEvent);
     }
 
     @Override

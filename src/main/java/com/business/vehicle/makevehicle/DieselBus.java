@@ -6,7 +6,7 @@ package com.business.vehicle.makevehicle;
 
 import com.business.contract.vehicle.makeVehicle.DieselBusContract;
 import com.business.contract.vehicle.vehicleparts.BusPartsContract;
-import com.business.vehicle.gpsimpl.GpsSimulator;
+import com.business.vehicle.gpsimpl.VehicleSimulator;
 
 /**
  *
@@ -19,10 +19,11 @@ public class DieselBus extends DieselBusContract {
     private  String consumptionRate;
     private String maxPassengers;
     private String currentAssignedRoute;
-    private BusPartsContract busPartsContract;
-    private DieselBusMaintenanceSchedule dieselBusMaintenanceSchedule;
+    public BusPartsContract busPartsContract;
+    public DieselBusMaintenanceSchedule dieselBusMaintenanceSchedule;
+    public VehicleSimulator vehicleSimulator;
 
-    public DieselBus(BusPartsContract busParts, DieselBusMaintenanceSchedule dieselBusMaintenanceSchedule){}
+    public DieselBus(BusPartsContract busParts, DieselBusMaintenanceSchedule dieselBusMaintenanceSchedule, VehicleSimulator vehicleSimulator){}
     
     @Override
     public String getFuelEnergyType() {

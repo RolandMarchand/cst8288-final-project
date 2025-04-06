@@ -1,14 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.business.vehicle.makevehicle;
 
-import com.business.contract.controller.Mediator;
+
 import com.business.contract.controller.VehicleRegistrationMediator;
-
-
-import com.business.contract.vehicle.makeVehicle.DieselBusContract;
 import com.business.contract.vehicle.vehicleparts.BusPartsContract;
 
 
@@ -17,16 +11,16 @@ import com.business.contract.vehicle.vehicleparts.BusPartsContract;
  *
  * @author D. Santos
  */
-public class VehicleFactory implements VehicleRegistrationMediator  {
+public class VehicleFactory extends VehicleRegistrationMediator  {
 
 
     @Override
-    public void notifySender(VehicleRegistrationMediator mediatorEvent) {
+    public void sendEvent(VehicleRegistrationMediator mediatorEvent) {
         
     }
 
     @Override
-    public void notifyReceiver(VehicleRegistrationMediator mediatorEvent) {
+    public void receiveEvent(VehicleRegistrationMediator mediatorEvent) {
         incomingVehicleRequest(mediatorEvent);
         
     }

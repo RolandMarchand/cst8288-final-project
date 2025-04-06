@@ -5,22 +5,18 @@ package com.business.vehicle.gpsimpl;
 
 
 import com.business.contract.controller.VehicleRegistrationMediator;
-import com.business.contract.vehicle.gps.GPSOdometerContract;
 import java.util.HashMap;
 
-import java.time.Clock;
-import java.time.Instant;
+
 import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import com.business.contract.vehicle.gps.VehicleSimulatorContract;
 
 /**
  *
  * @author D. Santos
  */
-public class GpsSimulator implements GPSOdometerContract {
+public class VehicleSimulator implements VehicleSimulatorContract {
 
     private String vehicleClockTime;
     private boolean vehicleRunning = false;
@@ -36,7 +32,7 @@ public class GpsSimulator implements GPSOdometerContract {
     Double fuelEfficiencyPercentage;
     boolean fuelWarningAlert = false;
 
-    public GpsSimulator() {
+    public VehicleSimulator() {
         gpsOverallCoordinator();
     }
 
@@ -44,7 +40,6 @@ public class GpsSimulator implements GPSOdometerContract {
     public void gpsOverallCoordinator() {
         simulateClockTime();
         simulateVehicleActivity(vehicleRunning);
-
         while (vehicleRunning) {
             simulateVehicleLattitude(vehicleRunning);
             simulateVehicleLongitude(vehicleRunning);
@@ -55,20 +50,18 @@ public class GpsSimulator implements GPSOdometerContract {
 
     }
 
+    
     @Override
     public synchronized void simulateVehicleActivity(boolean vehicleRunning) {
         boolean vehicleStarted = vehicleRunning;
-        String activityState;
+
         while (vehicleStarted) {
             Random random = new Random();
             int drivingStatus = random.nextInt(2);
             if (drivingStatus == 1) {
-                activityState = "Moving";
                 vehicleStarted = true;
                 this.useFuel = true;
-
             } else if (drivingStatus == 2) {
-                activityState = "Stopped";
                 vehicleStarted = false;
                 this.useFuel = false;
             }
@@ -79,7 +72,6 @@ public class GpsSimulator implements GPSOdometerContract {
                 Thread.currentThread().interrupt();
                 System.err.println("VehicleActivity thread Interrupted");
             }
-            notifyAll();
             this.vehicleRunning = vehicleStarted;
         }
     }
@@ -97,10 +89,8 @@ public class GpsSimulator implements GPSOdometerContract {
                 Thread.currentThread().interrupt();
                 System.err.println("simulateVehicleLattitude() thread interrupted");
             }
-            notifyAll();
             this.vehicleLattitude = lattitude;
         }
-
     }
 
     @Override
@@ -117,7 +107,6 @@ public class GpsSimulator implements GPSOdometerContract {
                 System.err.println("simulateVehicleLlongitude() thread interrupted");
             }
             this.vehicleLongitude = longitude;
-            notifyAll();
         }
     }
 
@@ -137,19 +126,17 @@ public class GpsSimulator implements GPSOdometerContract {
                 System.err.println("ClockTime thread interrupted.");
             }
             this.vehicleClockTime = dateTime;
-            notifyAll();
-
         }
     }
 
     @Override
     public synchronized void simulateFuelEnergyLevel(boolean useFuel, double fuelTank) {
         boolean fuelBeingUsed = useFuel;
+        double fuelUse = fuelTank;
+        
         Random random = new Random();
 
         double theFuelConsumptionRate = random.nextDouble(0.3, 1.3);
-
-        double fuelUse = fuelTank;
 
         while (fuelBeingUsed) {
             fuelUse = fuelUse - (1.0 * theFuelConsumptionRate);
@@ -162,8 +149,6 @@ public class GpsSimulator implements GPSOdometerContract {
             }
             this.fuelTank = fuelUse2;
             this.fuelConsumptionRate = theFuelConsumptionRate;
-            notifyAll();
-
         }
     }
 
@@ -189,8 +174,6 @@ public class GpsSimulator implements GPSOdometerContract {
             }
             this.fuelEfficiencyChart = fuelEfficiencyCalc;
             //TODO: write method to calculate fuelEfficiencyPercentage from HashMap.
-            notifyAll();
-
         }
     }
 
@@ -212,19 +195,20 @@ public class GpsSimulator implements GPSOdometerContract {
                     System.err.println("sendFuelAlert() thread interrupted.");
                 }
                 //TODO: write method to calculate fuelEfficiencyPercentage from HashMap.
-                notifyAll();
-
             }
         }
     }
-
+    
     @Override
-    public void notifySender(VehicleRegistrationMediator mediatorEvent) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void sendEvent(VehicleRegistrationMediator mediatorEvent) {
     }
 
     @Override
-    public void notifyReceiver(VehicleRegistrationMediator mediatorEvent) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void receiveEvent(VehicleRegistrationMediator mediatorEvent) {
+    }
+
+    @Override
+    public String processVehicleRegistration(VehicleRegistrationMediator mediatorEvent) {
+        return null;
     }
 }

@@ -2,7 +2,7 @@ package com.business.contract.vehicle.makeVehicle;
 
 import com.business.contract.vehicle.vehicleparts.BusPartsContract;
 import com.business.contract.vehicle.vehicleparts.BusPartsContract;
-import com.business.contract.vehicle.gps.GPSOdometerContract;
+import com.business.contract.vehicle.gps.VehicleSimulatorContract;
 
 /**
  *
