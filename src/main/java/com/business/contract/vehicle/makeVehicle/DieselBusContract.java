@@ -8,47 +8,40 @@ import com.business.contract.vehicle.gps.GPSOdometerContract;
  *
  * @author D. Santos
  */
-abstract class DieselBusContract extends VehicleContract {
+ public abstract class DieselBusContract extends VehicleContract {
 
-    private final String fuelEnergyType;
-    private final String vehicleRegistrationNumber;
-    private final String consumptionRate;
-    private final String maxPassengers;
-    private String currentAssignedRoute;
-    private final BusPartsContract busParts;
-
-    public DieselBusContract(String fuelType, String vehicleRegistrationNumber, String consumptionRate, String maxPassengers, String currentAssignedRoute, BusPartsContract busPartsContract) {
-        this.fuelEnergyType = fuelType;
-        this.vehicleRegistrationNumber = vehicleRegistrationNumber;
-        this.consumptionRate = consumptionRate;
-        this.maxPassengers = maxPassengers;
-        this.currentAssignedRoute = currentAssignedRoute;
-        this.busParts = busPartsContract;
-    }
+     @Override
+    public abstract String getFuelEnergyType();
+    
+     @Override
+    public abstract String getVehicleRegistrationNumber();
 
     @Override
-    public String getFuelEnergyType() {
-        return this.fuelEnergyType;
-    }
+    public abstract String getConsumptionRate();
 
     @Override
-    public String getVehicleRegistrationNumber() {
-        return this.vehicleRegistrationNumber;
-    }
+    public abstract String getMaxPassengerCount();
 
     @Override
-    public String getConsumptionRate() {
-        return this.consumptionRate;
-    }
+    public abstract String getCurrentAssignedRoute();
+    
+    
+    @Override
+    public abstract void setFuelEnergyType(String fuelEnergy);
+    
+    @Override
+    public abstract void setVehicleRegistrationNumber(String vehicleRegistrationNumber);
 
     @Override
-    public String getMaxPassengerCount() {
-        return this.maxPassengers;
-    }
+    public abstract void setConsumptionRate(String consumptionRate );
 
     @Override
-    public String getCurrentAssignedRoute() {
-        return this.currentAssignedRoute;
-    }
+    public abstract void setMaxPassengerCount(String maxPassengers);
 
+    @Override
+    public abstract void setCurrentAssignedRoute(String currentAssignedRoute);
+
+
+    
+   
 }

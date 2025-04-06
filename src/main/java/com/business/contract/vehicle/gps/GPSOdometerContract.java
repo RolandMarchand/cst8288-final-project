@@ -4,6 +4,7 @@
  */
 package com.business.contract.vehicle.gps;
 
+import com.business.contract.controller.Mediator;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 
@@ -11,7 +12,7 @@ import java.util.HashMap;
  *
  * @author D. Santos
  */
-public interface GPSOdometerContract {
+public interface GPSOdometerContract extends Mediator {
     
     abstract void gpsOverallCoordinator();
     

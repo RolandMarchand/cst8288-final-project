@@ -5,6 +5,7 @@
 package com.business.contract.vehicle.makeVehicle;
 
 import com.business.contract.vehicle.gps.GPSOdometerContract;
+import com.business.contract.vehicle.vehicleparts.BusPartsContract;
 import com.business.vehicle.gpsimpl.GpsSimulator;
 
 /**
@@ -13,15 +14,30 @@ import com.business.vehicle.gpsimpl.GpsSimulator;
  */
 abstract class VehicleContract extends GpsSimulator {
 
-    abstract String getFuelEnergyType();
+    public abstract String getFuelEnergyType();
 
-    abstract String getVehicleRegistrationNumber();
+    public abstract String getVehicleRegistrationNumber();
 
-    abstract String getConsumptionRate();
+    public abstract String getConsumptionRate();
 
-    abstract String getMaxPassengerCount();
+    public abstract String getMaxPassengerCount();
 
-    abstract String getCurrentAssignedRoute();
+    public abstract String getCurrentAssignedRoute();
+    
+    
+    public abstract void setFuelEnergyType(String fuelEnergy);
+
+    public abstract void setVehicleRegistrationNumber(String vehicleRegistrationNumber);
+
+    public abstract void setConsumptionRate(String consumptionRate );
+
+    public abstract void setMaxPassengerCount(String maxPassengers);
+
+    public abstract void setCurrentAssignedRoute(String currentAssignedRoute);
+    
+
+    
+
 
  
 }

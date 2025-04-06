@@ -20,14 +20,7 @@ abstract class ElectricTrainContract extends VehicleContract {
     private String currentAssignedRoute;
     private final TrainPartsContract trainParts;
 
-    public ElectricTrainContract(String fuelType, String vehicleRegistrationNumber, String consumptionRate, String maxPassengers, String currentAssignedRoute, com.business.contract.vehicle.vehicleparts.TrainPartsContract trainPartsContract) {
-        this.fuelEnergyType = fuelType;
-        this.vehicleRegistrationNumber = vehicleRegistrationNumber;
-        this.consumptionRate = consumptionRate;
-        this.maxPassengers = maxPassengers;
-        this.currentAssignedRoute = currentAssignedRoute;
-        this.trainParts = trainPartsContract;
-    }
+    public ElectricTrainContract(){}
 
     @Override
     public String getFuelEnergyType() {

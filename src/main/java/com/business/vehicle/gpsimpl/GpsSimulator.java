@@ -4,6 +4,7 @@
 package com.business.vehicle.gpsimpl;
 
 
+import com.business.contract.controller.VehicleRegistrationMediator;
 import com.business.contract.vehicle.gps.GPSOdometerContract;
 import java.util.HashMap;
 
@@ -48,6 +49,8 @@ public class GpsSimulator implements GPSOdometerContract {
             simulateVehicleLattitude(vehicleRunning);
             simulateVehicleLongitude(vehicleRunning);
             simulateFuelEnergyLevel(useFuel, fuelTank);
+            calculateFuelEfficiency(vehicleRunning, fuelEfficiencyChart, fuelConsumptionRate);
+            sendFuelAlert(vehicleRunning, fuelEfficiencyPercentage);
         }
 
     }
@@ -165,7 +168,7 @@ public class GpsSimulator implements GPSOdometerContract {
     }
 
     @Override
-    public void calculateFuelEfficiency(boolean vehicleRunning, HashMap fuelChart, double fuelConsumptionRate) {
+    public synchronized void calculateFuelEfficiency(boolean vehicleRunning, HashMap fuelChart, double fuelConsumptionRate) {
         boolean calcFuelEfficiency = vehicleRunning;
         double fuelBurnRate = fuelConsumptionRate;
         HashMap fuelEfficiencyCalc = fuelChart;
@@ -192,7 +195,7 @@ public class GpsSimulator implements GPSOdometerContract {
     }
 
     @Override
-    public void sendFuelAlert(boolean vehicleRunning, double fuelEfficiencyPercentage) {
+    public synchronized void sendFuelAlert(boolean vehicleRunning, double fuelEfficiencyPercentage) {
         boolean isRunning = vehicleRunning;
         double fuelRate = fuelEfficiencyPercentage;
 
@@ -213,5 +216,15 @@ public class GpsSimulator implements GPSOdometerContract {
 
             }
         }
+    }
+
+    @Override
+    public void notifySender(VehicleRegistrationMediator mediatorEvent) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void notifyReceiver(VehicleRegistrationMediator mediatorEvent) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
