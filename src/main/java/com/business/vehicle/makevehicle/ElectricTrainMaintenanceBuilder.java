@@ -13,7 +13,7 @@ public class DieselMaintenanceBuilder extends DieselBusMaintenanceSchedule {
 
     public DieselMaintenanceBuilder(VehicleRegistrationMediator mediatorevent) {
     }
- 
+
     public DieselBusMaintenanceSchedule buildDieselMaintenance(VehicleRegistrationMediator mediatorevent) {
 
         String brakesMaintenanceKM = mediatorevent.brakesMaintenanceKM;

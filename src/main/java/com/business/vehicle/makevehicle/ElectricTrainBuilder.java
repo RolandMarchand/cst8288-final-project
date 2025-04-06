@@ -15,24 +15,24 @@ import com.business.vehicle.gpsimpl.VehicleSimulator;
 public class ElectricTrainBuilder extends DieselBus {
 
     BusPartsContract busPartsContract;
-    DieselBusMaintenanceSchedule dieselBusMaintenanceSchedule; 
+    DieselBusMaintenanceSchedule dieselBusMaintenanceSchedule;
     VehicleRegistrationMediator mediatorEvent;
     VehicleSimulator vehicleSimulator;
-    
+
     public ElectricTrainBuilder(VehicleRegistrationMediator mediatorEvent, BusPartsContract busPartsContract, DieselBusMaintenanceSchedule dieselBusMaintenanceSchedule, VehicleSimulator vehicleSimulator) {
         super(busPartsContract, dieselBusMaintenanceSchedule, vehicleSimulator);
     }
-    
-    public DieselBus buildDieselBus(VehicleRegistrationMediator mediatorevent, BusPartsContract busPartsContract, DieselBusMaintenanceSchedule dieselBusMaintenanceSchedule)  {
+
+    public DieselBus buildDieselBus(VehicleRegistrationMediator mediatorevent, BusPartsContract busPartsContract, DieselBusMaintenanceSchedule dieselBusMaintenanceSchedule) {
         String vehicle = mediatorevent.vehicleType;
         String fuelEnergyType = mediatorevent.fuelEnergyType;
         String vehicleRegistrationNumber = mediatorevent.vehicleRegistrationNumber;
         String consumptionRate = mediatorevent.consumptionRate;
         String maxPassengers = mediatorevent.maxPassengers;
         String currentAssignedRoute = mediatorevent.currentAssignedRoute;
-        
+
         DieselBus dieselBus = new DieselBus(busPartsContract, dieselBusMaintenanceSchedule, vehicleSimulator);
-        
+
         dieselBus.setBusParts(busPartsContract);
         dieselBus.setMaintenanceSchedule(dieselBusMaintenanceSchedule);
         dieselBus.setConsumptionRate(consumptionRate);
@@ -41,5 +41,5 @@ public class ElectricTrainBuilder extends DieselBus {
         dieselBus.setMaxPassengerCount(maxPassengers);
         dieselBus.setVehicleRegistrationNumber(vehicleRegistrationNumber);
         return dieselBus;
-}
+    }
 }

@@ -8,7 +8,7 @@ package com.business.contract.vehicle.maintenance;
  *
  * @author D. Santos
  */
-abstract class ElectricTrainMaintenanceScheduleContract extends TrainMaintenanceScheduleContract {
+public abstract class ElectricTrainMaintenanceScheduleContract extends TrainMaintenanceScheduleContract {
 
    public ElectricTrainMaintenanceScheduleContract() {
     }

@@ -9,5 +9,5 @@ package com.business.vehicle.makevehicle;
  * @author drssa
  */
 class HybridTrainPartsContract {
-    
+
 }
