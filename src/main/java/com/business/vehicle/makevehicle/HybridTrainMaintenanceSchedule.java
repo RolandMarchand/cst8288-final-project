@@ -3,8 +3,15 @@ package com.business.vehicle.makevehicle;
 import com.business.contract.vehicle.maintenance.HybridTrainMaintenanceScheduleContract;
 
 /**
- *
- * @author D. Santos
+ * Represents the maintenance schedule details for a hybrid train.
+ * 
+ * This class stores information such as maintenance kilometers, 
+ * last and next maintenance dates for various components, and 
+ * service overhaul scheduling.
+ * 
+ * It also allows triggering an internal maintenance alert.
+ * 
+ * Author: D. Santos
  */
 public class HybridTrainMaintenanceSchedule extends HybridTrainMaintenanceScheduleContract {
 

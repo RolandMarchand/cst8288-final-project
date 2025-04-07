@@ -4,7 +4,6 @@
  */
 package com.business.contract.vehicle.routes;
 
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -25,31 +24,44 @@ import java.util.ArrayList;
  */
 public class TransitRouteBuilder {
 
+    // List to store transit stop data as String arrays
+    public ArrayList<String[]> transitStops = new ArrayList<String[]>();
+
+    // List to store route names
+    public ArrayList<String> transitRouteNames = new ArrayList<String>();
+
+    /**
+     * Default constructor for TransitRouteBuilder.
+     */
     public TransitRouteBuilder() {
     }
 
-    public ArrayList<String[]> transitStops = new ArrayList<String[]>();
-
     /**
-     *
+     * Retrieves the list of transit stops, each represented by a String array.
+     * 
+     * @return ArrayList of String[] representing the transit stops
      */
-    public ArrayList<String> transitRouteNames = new ArrayList<String>();
-    
-    public ArrayList<String[]> getTransitStops(){
+    public ArrayList<String[]> getTransitStops() {
         return transitStops;
     }
-    
-      public ArrayList<String> getTransitRouteNames(){
+
+    /**
+     * Retrieves the list of transit route names.
+     * 
+     * @return ArrayList of Strings representing the route names
+     */
+    public ArrayList<String> getTransitRouteNames() {
         return transitRouteNames;
     }
 
     /**
      * Parses the transit stops file , builds up the variables, and writes a
      * String[] object to the transitStops array. 
+     * 
      * @throws IOException
      */
     public void loadTransitRoutes() throws IOException {
-
+        // Define the path to the routes file
         Path basePath = Paths.get("/cst8288-final-project");
         Path relativePath = Paths.get("/src/main/resources/routes.txt");
         Path basePathToPath = basePath.relativize(relativePath);
@@ -62,9 +74,11 @@ public class TransitRouteBuilder {
 
         try (InputStream input = Files.newInputStream(basePathToPath); BufferedReader reader = new BufferedReader(new InputStreamReader(input))) {
             while ((line = reader.readLine()) != null) {
+                // If line does not contain a delimiter, it's a route title
                 if (!line.contains("|")) {
                     transitRoute = line;
                 } else if (line.contains("|") && line != null) {
+                    // If line contains a delimiter, parse it
                     routeStringManager = line.split("|");
                     transitStopName = routeStringManager[0];
                     transitStopLat = routeStringManager[1];
@@ -72,11 +86,12 @@ public class TransitRouteBuilder {
                 }
             }
             if (reader.readLine() == null) {
+                // Add the parsed data to the transitStops list
                 transitStops.add(buildTransitRoute(transitRoute, transitStopName, transitStopLat, transitStopLong));
                 transitRouteNames.add(transitRoute);
             }
         }
-        //TODO: Alert Observer.
+        // TODO: Alert the Observer after loading the routes
     }
 
     /**
@@ -90,12 +105,12 @@ public class TransitRouteBuilder {
      */
     public String[] buildTransitRoute(String transitRoute, String transitStopName, String transitStopLat, String transitStopLong) {
         String[] transitStop = new String[4];
-       
+
         transitStop[0] = transitRoute;
-          transitStop[1] = transitStopName;
-            transitStop[2] = transitStopLat;
-              transitStop[3] = transitStopLong;
-        
+        transitStop[1] = transitStopName;
+        transitStop[2] = transitStopLat;
+        transitStop[3] = transitStopLong;
+
         return transitStop;
     }
 }

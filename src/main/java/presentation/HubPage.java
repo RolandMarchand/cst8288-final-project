@@ -8,8 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ * This servlet displays the central hub page for the transit system,
+ * providing navigation to various modules like vehicle management, fuel
+ * reporting, maintenance dashboard, and GPS tracking.
  *
- * @author sebl4
+ * Author: sebl4
  */
 public class HubPage extends HttpServlet {
 

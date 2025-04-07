@@ -10,7 +10,10 @@ import com.business.contract.vehicle.vehicleparts.TrainPartsContract;
 import com.business.vehicle.gpsimpl.VehicleSimulator;
 
 /**
- *
+ * Builds and configures HybridTrain instances using data from the registration mediator.
+ * 
+ * This builder handles setting up the train's technical details, parts, and maintenance info.
+ * 
  * @author D. Santos
  */
 public class HybridTrainBuilder extends HybridTrain {

@@ -13,37 +13,37 @@ import java.sql.Date;
 import java.time.LocalDate;
 
 /**
- * Data Access Object for bus maintenance schedules
- *
- * @author roland
+ * Handles all database operations related to 
+ * bus maintenance schedules.
+ * 
+ * This class creates new maintenance records 
+ * for buses and stores them in the database.
+ * 
+ * It connects to the database using the DataSource class.
+ * 
+ * Author: roland
  */
 public class BusMaintenanceScheduleDAO {
 
     /**
-     * Create a new bus maintenance schedule
-     *
-     * @param vehicleId The associated vehicle's ID
-     * @param brakesMaintenanceKm The maintenance kilometer for brakes
-     * @param tiresMaintenanceKm The maintenance kilometer for tires
-     * @param axleBearingAMaintenanceKm The maintenance kilometer for axle
-     * bearing A
-     * @param axleBearingBMaintenanceKm The maintenance kilometer for axle
-     * bearing B
-     * @param brakesNextMaintenanceDate The next maintenance date for brakes
-     * @param brakesLastMaintenanceDate The last maintenance date for brakes
-     * @param tiresNextMaintenanceDate The next maintenance date for tires
-     * @param tiresLastMaintenanceDate The last maintenance date for tires
-     * @param axleBearingANextMaintenanceDate The next maintenance date for axle
-     * bearing A
-     * @param axleBearingALastMaintenanceDate The last maintenance date for axle
-     * bearing A
-     * @param axleBearingBNextMaintenanceDate The next maintenance date for axle
-     * bearing B
-     * @param axleBearingBLastMaintenanceDate The last maintenance date for axle
-     * bearing B
-     * @param nextServiceOverhaulDate The next service overhaul date
-     * @param lastServiceOverhaulDate The last service overhaul date
-     * @return The ID of the newly created schedule
+     * Saves a new bus maintenance schedule in the database.
+     * 
+     * @param vehicleId ID of the bus
+     * @param brakesMaintenanceKm KM value when brakes need maintenance
+     * @param tiresMaintenanceKm KM value when tires need maintenance
+     * @param axleBearingAMaintenanceKm KM value when axle bearing A needs maintenance
+     * @param axleBearingBMaintenanceKm KM value when axle bearing B needs maintenance
+     * @param brakesNextMaintenanceDate Next scheduled date for brake maintenance
+     * @param brakesLastMaintenanceDate Last completed brake maintenance date
+     * @param tiresNextMaintenanceDate Next scheduled date for tire maintenance
+     * @param tiresLastMaintenanceDate Last completed tire maintenance date
+     * @param axleBearingANextMaintenanceDate Next date for axle bearing A maintenance
+     * @param axleBearingALastMaintenanceDate Last date axle bearing A was maintained
+     * @param axleBearingBNextMaintenanceDate Next date for axle bearing B maintenance
+     * @param axleBearingBLastMaintenanceDate Last date axle bearing B was maintained
+     * @param nextServiceOverhaulDate Next full service overhaul date
+     * @param lastServiceOverhaulDate Last full service overhaul date
+     * @return The new maintenance schedule ID, or -1 if failed
      */
     public int createBusMaintenanceSchedule(
             int vehicleId,
@@ -71,7 +71,8 @@ public class BusMaintenanceScheduleDAO {
                 + "next_service_overhaul_date, last_service_overhaul_date) "
                 + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-        try (Connection conn = DataSource.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+        try (Connection conn = DataSource.getConnection(); 
+             PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
             stmt.setInt(1, vehicleId);
             stmt.setInt(2, brakesMaintenanceKm);

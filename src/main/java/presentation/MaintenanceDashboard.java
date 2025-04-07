@@ -8,8 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ * This servlet displays a simple dashboard to filter maintenance reports
+ * by vehicle fuel type. It handles both GET and POST requests.
  *
- * @author sebl4
+ * Author: sebl4
  */
 public class MaintenanceDashboard extends HttpServlet {
 

@@ -9,8 +9,13 @@ import com.business.vehicle.makevehicle.DieselBusMaintenanceSchedule;
 import com.business.vehicle.makevehicle.VehicleFactory;
 
 /**
- *
- * @author drssa
+ * This class acts as a mediator to facilitate communication between the
+ * presentation layer and the vehicle registration business logic. It stores
+ * vehicle-related data and forwards events to the appropriate handler classes.
+ * 
+ * Implements the singleton pattern to ensure a single shared instance.
+ * 
+ * @author D. Santos
  */
 public class VehicleRegistrationMediator implements Mediator {
 

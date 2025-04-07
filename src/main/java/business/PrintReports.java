@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
+ * Servlet responsible for printing or generating reports.
+ * The report type and content should be defined in the business logic.
+ * 
  * @author sebl4
  */
 public class PrintReports extends HttpServlet {
@@ -27,7 +29,7 @@ public class PrintReports extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             String typeToPrint;
-            
+
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");

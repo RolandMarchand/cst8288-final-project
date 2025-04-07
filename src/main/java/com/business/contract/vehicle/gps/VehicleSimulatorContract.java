@@ -9,6 +9,10 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 
 /**
+ * Contract interface for simulating various GPS and vehicle-related behaviors.
+ * Acts as a mediator in the system and defines the required methods for vehicle
+ * activity simulation, such as location tracking, fuel usage, and time
+ * synchronization.
  *
  * @author D. Santos
  */

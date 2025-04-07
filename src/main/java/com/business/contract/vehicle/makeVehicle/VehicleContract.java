@@ -9,6 +9,9 @@ import com.business.vehicle.gpsimpl.VehicleSimulator;
 import com.business.contract.vehicle.gps.VehicleSimulatorContract;
 
 /**
+ * Defines a general contract for properties and behaviors for the different vehicles.
+ * It provides methods related to fuel/energy information, registration, route assignment,
+ * and passenger capacity.
  *
  * @author D. Santos
  */

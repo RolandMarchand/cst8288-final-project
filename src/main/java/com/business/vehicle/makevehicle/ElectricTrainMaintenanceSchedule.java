@@ -3,7 +3,11 @@ package com.business.vehicle.makevehicle;
 import com.business.contract.vehicle.maintenance.ElectricTrainMaintenanceScheduleContract;
 
 /**
- *
+ * Holds maintenance information for electric train parts.
+ * 
+ * This class tracks wear and tear, last and next maintenance dates,
+ * and service overhaul schedules for electric train components.
+ * 
  * @author D. Santos
  */
 public class ElectricTrainMaintenanceSchedule extends ElectricTrainMaintenanceScheduleContract {
@@ -22,10 +26,13 @@ public class ElectricTrainMaintenanceSchedule extends ElectricTrainMaintenanceSc
     private String lastServiceOverhaulDate;
     private boolean alertMaintenance;
 
+    /**
+     * Creates a new ElectricTrainMaintenanceSchedule.
+     */
     ElectricTrainMaintenanceSchedule() {
     }
 
-    //get kilometre wear and tear per part.
+    // get kilometre wear and tear per part
     @Override
     public String getCatenaryMaintenaceKM() {
         return catenaryMaintenanceKM;
@@ -41,7 +48,7 @@ public class ElectricTrainMaintenanceSchedule extends ElectricTrainMaintenanceSc
         return circuitBreakersMaintenanceKM;
     }
 
-    //set kilometre wear and tear per part.
+    // set kilometre wear and tear per part
     @Override
     public void setCatenaryMaintenaceKM(String catenaryMaintenanceKM) {
         this.catenaryMaintenanceKM = catenaryMaintenanceKM;
@@ -57,7 +64,7 @@ public class ElectricTrainMaintenanceSchedule extends ElectricTrainMaintenanceSc
         this.circuitBreakersMaintenanceKM = circuitBreakerMaintenanceKM;
     }
 
-    //get parts next maintenance date
+    // get parts' next maintenance dates
     @Override
     public String getCatenaryNextMaintenanceDate() {
         return catenaryNextMaintenanceDate;
@@ -73,15 +80,15 @@ public class ElectricTrainMaintenanceSchedule extends ElectricTrainMaintenanceSc
         return circuitBreakersNextMaintenanceDate;
     }
 
-    //set parts next maintenance date. 
+    // set parts' next maintenance dates
     @Override
     public void setCatenaryNextMaintenanceDate(String catenaryNextMaintenanceDate) {
         this.catenaryNextMaintenanceDate = catenaryNextMaintenanceDate;
     }
 
     @Override
-    public void setPantographNextMaintenanceDate(String pantographLastMaintenanceDate) {
-        this.pantographNextMaintenanceDate = pantographLastMaintenanceDate;
+    public void setPantographNextMaintenanceDate(String pantographNextMaintenanceDate) {
+        this.pantographNextMaintenanceDate = pantographNextMaintenanceDate;
     }
 
     @Override
@@ -89,7 +96,7 @@ public class ElectricTrainMaintenanceSchedule extends ElectricTrainMaintenanceSc
         this.circuitBreakersNextMaintenanceDate = circuitBreakerNextMaintenanceDate;
     }
 
-    //get parts last maintenance date.
+    // get parts' last maintenance dates
     @Override
     public String getCatenaryLastMaintenanceDate() {
         return catenaryLastMaintenanceDate;
@@ -105,7 +112,7 @@ public class ElectricTrainMaintenanceSchedule extends ElectricTrainMaintenanceSc
         return circuitBreakersLastMaintenanceDate;
     }
 
-    //set parts last maintenance date
+    // set parts' last maintenance dates
     @Override
     public void setCatenaryLastMaintenanceDate(String catenaryLastMaintenanceDate) {
         this.catenaryLastMaintenanceDate = catenaryLastMaintenanceDate;
@@ -121,34 +128,33 @@ public class ElectricTrainMaintenanceSchedule extends ElectricTrainMaintenanceSc
         this.circuitBreakersLastMaintenanceDate = circuitBreakerLastMaintenanceDate;
     }
 
-    //get next service overhaul dates
+    // get next service overhaul date
     @Override
     public String getNextServiceOverhaulDate() {
         return nextServiceOverhaulDate;
     }
 
-    //set next service overhaul date.
+    // set next service overhaul date
     @Override
     public void setNextServiceOverhaulDate(String nextServiceOverhaulDate) {
         this.nextServiceOverhaulDate = nextServiceOverhaulDate;
     }
 
-    //get last service overhaul date.
+    // get last service overhaul date
     @Override
     public String getLastServiceOverhaulDate() {
         return lastServiceOverhaulDate;
     }
 
-    //set last service overhaul date.
+    // set last service overhaul date
     @Override
-    public void setLastServiceOverhaulDate(String LastServiceOverhaulDate) {
-        this.lastServiceOverhaulDate = LastServiceOverhaulDate;
+    public void setLastServiceOverhaulDate(String lastServiceOverhaulDate) {
+        this.lastServiceOverhaulDate = lastServiceOverhaulDate;
     }
 
-    //send maintenance alert
+    // send alert for upcoming or needed maintenance
     @Override
     public void sendMaintenanceAlert() {
         alertMaintenance = true;
     }
-
 }

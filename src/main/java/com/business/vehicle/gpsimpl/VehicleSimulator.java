@@ -3,17 +3,19 @@
  */
 package com.business.vehicle.gpsimpl;
 
-
 import com.business.contract.controller.VehicleRegistrationMediator;
 import java.util.HashMap;
-
-
 import java.time.LocalDateTime;
 import java.util.Random;
 import com.business.contract.vehicle.gps.VehicleSimulatorContract;
 
 /**
- *
+ * This class simulates a vehicle's GPS and fuel systems, including tracking 
+ * latitude, longitude, clock time, fuel usage, and vehicle activity.
+ * It synchronizes the various threads responsible for simulating vehicle activity
+ * and provides methods for calculating fuel efficiency and sending alerts when fuel is low.
+ * Implements link VehicleSimulatorContract
+ * 
  * @author D. Santos
  */
 public class VehicleSimulator implements VehicleSimulatorContract {
@@ -32,10 +34,17 @@ public class VehicleSimulator implements VehicleSimulatorContract {
     Double fuelEfficiencyPercentage;
     boolean fuelWarningAlert = false;
 
+    /**
+     * Default constructor that initializes the GPS and vehicle activity simulation.
+     */
     public VehicleSimulator() {
         gpsOverallCoordinator();
     }
 
+    /**
+     * Coordinates the overall simulation by initiating the clock time and vehicle activity.
+     * This method runs the simulation as long as the vehicle is running.
+     */
     @Override
     public void gpsOverallCoordinator() {
         simulateClockTime();
@@ -47,10 +56,14 @@ public class VehicleSimulator implements VehicleSimulatorContract {
             calculateFuelEfficiency(vehicleRunning, fuelEfficiencyChart, fuelConsumptionRate);
             sendFuelAlert(vehicleRunning, fuelEfficiencyPercentage);
         }
-
     }
 
-    
+    /**
+     * Simulates the vehicle's activity by randomly determining whether the vehicle 
+     * is running or stopped. It also determines if fuel is being used.
+     * 
+     * @param vehicleRunning boolean flag indicating if the vehicle is running
+     */
     @Override
     public synchronized void simulateVehicleActivity(boolean vehicleRunning) {
         boolean vehicleStarted = vehicleRunning;
@@ -76,6 +89,12 @@ public class VehicleSimulator implements VehicleSimulatorContract {
         }
     }
 
+    /**
+     * Simulates the vehicle's latitude by randomly generating a value within a 
+     * defined range and updating the vehicle's latitude.
+     * 
+     * @param vehicleRunning boolean flag indicating if the vehicle is running
+     */
     @Override
     public synchronized void simulateVehicleLattitude(boolean vehicleRunning) {
         boolean simulateLattitude = vehicleRunning;
@@ -93,6 +112,12 @@ public class VehicleSimulator implements VehicleSimulatorContract {
         }
     }
 
+    /**
+     * Simulates the vehicle's longitude by randomly generating a value within a 
+     * defined range and updating the vehicle's longitude.
+     * 
+     * @param vehicleRunning boolean flag indicating if the vehicle is running
+     */
     @Override
     public synchronized void simulateVehicleLongitude(boolean vehicleRunning) {
         boolean simulateLongitude = vehicleRunning;
@@ -110,6 +135,10 @@ public class VehicleSimulator implements VehicleSimulatorContract {
         }
     }
 
+    /**
+     * Simulates the vehicle's clock time by updating the vehicleClockTime at 
+     * regular intervals.
+     */
     @Override
     public synchronized void simulateClockTime() {
         String dateTime;
@@ -129,6 +158,13 @@ public class VehicleSimulator implements VehicleSimulatorContract {
         }
     }
 
+    /**
+     * Simulates the vehicle's fuel energy level by adjusting the fuel tank 
+     * level based on the fuel consumption rate.
+     * 
+     * @param useFuel boolean flag indicating if fuel is being used
+     * @param fuelTank the current fuel level of the vehicle
+     */
     @Override
     public synchronized void simulateFuelEnergyLevel(boolean useFuel, double fuelTank) {
         boolean fuelBeingUsed = useFuel;
@@ -152,6 +188,14 @@ public class VehicleSimulator implements VehicleSimulatorContract {
         }
     }
 
+    /**
+     * Calculates the vehicle's fuel efficiency based on the fuel consumption 
+     * rate and stores it in the fuelEfficiencyChart.
+     * 
+     * @param vehicleRunning boolean flag indicating if the vehicle is running
+     * @param fuelChart the fuel efficiency chart to be updated
+     * @param fuelConsumptionRate the current rate of fuel consumption
+     */
     @Override
     public synchronized void calculateFuelEfficiency(boolean vehicleRunning, HashMap fuelChart, double fuelConsumptionRate) {
         boolean calcFuelEfficiency = vehicleRunning;
@@ -177,6 +221,12 @@ public class VehicleSimulator implements VehicleSimulatorContract {
         }
     }
 
+    /**
+     * Sends a fuel warning alert if the fuel efficiency percentage exceeds a certain threshold.
+     * 
+     * @param vehicleRunning boolean flag indicating if the vehicle is running
+     * @param fuelEfficiencyPercentage the current fuel efficiency percentage
+     */
     @Override
     public synchronized void sendFuelAlert(boolean vehicleRunning, double fuelEfficiencyPercentage) {
         boolean isRunning = vehicleRunning;
@@ -198,15 +248,31 @@ public class VehicleSimulator implements VehicleSimulatorContract {
             }
         }
     }
-    
+
+    /**
+     * Placeholder method for handling events related to vehicle registration.
+     * 
+     * @param mediatorEvent the event related to vehicle registration
+     */
     @Override
     public void sendEvent(VehicleRegistrationMediator mediatorEvent) {
     }
 
+    /**
+     * Placeholder method for receiving events related to vehicle registration.
+     * 
+     * @param mediatorEvent the event related to vehicle registration
+     */
     @Override
     public void receiveEvent(VehicleRegistrationMediator mediatorEvent) {
     }
 
+    /**
+     * Placeholder method for processing a vehicle registration event.
+     * 
+     * @param mediatorEvent the event related to vehicle registration
+     * @return a string result of the registration process
+     */
     @Override
     public String processVehicleRegistration(VehicleRegistrationMediator mediatorEvent) {
         return null;

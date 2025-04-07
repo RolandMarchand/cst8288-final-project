@@ -8,8 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ * This servlet displays a web page for viewing fuel consumption reports,
+ * allowing users to filter by fuel type. It supports both GET and POST methods.
  *
- * @author sebl4
+ * @author: sebl4
  */
 public class FuelReportPage extends HttpServlet {
 

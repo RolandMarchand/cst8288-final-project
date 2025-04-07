@@ -5,15 +5,19 @@
 package com.business.contract.vehicle.maintenance;
 
 /**
+ * Abstract maintenance schedule contract for hybrid trains. Extends the
+ * TrainMaintenanceScheduleContract and defines abstract methods for tracking
+ * and updating the wear, tear, and maintenance schedules of hybrid train
+ * components: catenary systems, pantographs, and circuit breakers.
  *
  * @author D. Santos
  */
 public abstract class HybridTrainMaintenanceScheduleContract extends TrainMaintenanceScheduleContract {
 
-   public HybridTrainMaintenanceScheduleContract() {
+    public HybridTrainMaintenanceScheduleContract() {
     }
 
-       //get kilometre wear and tear per part.
+    //get kilometre wear and tear per part.
     @Override
     public abstract String getCatenaryMaintenaceKM();
 
@@ -72,8 +76,8 @@ public abstract class HybridTrainMaintenanceScheduleContract extends TrainMainte
 
     @Override
     public abstract void setCircuitBreakerLastMaintenanceDate(String circuitBreakerLastMaintenanceDate);
-    
-     //get next service overhaul dates
+
+    //get next service overhaul dates
     @Override
     public abstract String getNextServiceOverhaulDate();
 
@@ -92,6 +96,5 @@ public abstract class HybridTrainMaintenanceScheduleContract extends TrainMainte
     //send maintenance alert
     @Override
     public abstract void sendMaintenanceAlert();
-    
 
 }

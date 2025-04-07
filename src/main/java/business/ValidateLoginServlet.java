@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
+ * Servlet responsible for handling user login validation requests.
+ * Integrates with backend logic to verify login credentials.
+ * 
  * @author sebl4
  */
 public class ValidateLoginServlet extends HttpServlet {

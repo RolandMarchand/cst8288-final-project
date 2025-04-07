@@ -3,7 +3,12 @@ package com.business.vehicle.makevehicle;
 import com.business.contract.controller.VehicleRegistrationMediator;
 
 /**
- *
+ * Builds and initializes HybridTrainMaintenanceSchedule using maintenance data 
+ * from the VehicleRegistrationMediator.
+ * 
+ * This builder sets up all required fields such as wear and tear data and 
+ * maintenance scheduling.
+ * 
  * @author D. Santos
  */
 public class HybridTrainMaintenanceBuilder extends HybridTrainMaintenanceSchedule {

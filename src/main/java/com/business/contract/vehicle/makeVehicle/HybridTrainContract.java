@@ -5,15 +5,20 @@ import com.business.contract.vehicle.vehicleparts.BusPartsContract;
 import com.business.contract.vehicle.gps.VehicleSimulatorContract;
 
 /**
+ * Abstract contract for hybrid train configurations.
+ * 
+ * Defines the structure that any Hybrid train implementation must follow, with
+ * methods for accessing and modifying vehicle properties like the fuel/energy type,
+ * registration number, passenger capacity, and assigned routes.
  *
  * @author D. Santos
  */
- public abstract class HybridTrainContract extends VehicleContract {
+public abstract class HybridTrainContract extends VehicleContract {
 
-     @Override
+    @Override
     public abstract String getFuelEnergyType();
     
-     @Override
+    @Override
     public abstract String getVehicleRegistrationNumber();
 
     @Override
@@ -24,7 +29,6 @@ import com.business.contract.vehicle.gps.VehicleSimulatorContract;
 
     @Override
     public abstract String getCurrentAssignedRoute();
-    
     
     @Override
     public abstract void setFuelEnergyType(String fuelEnergy);
@@ -41,7 +45,4 @@ import com.business.contract.vehicle.gps.VehicleSimulatorContract;
     @Override
     public abstract void setCurrentAssignedRoute(String currentAssignedRoute);
 
-
-    
-   
 }

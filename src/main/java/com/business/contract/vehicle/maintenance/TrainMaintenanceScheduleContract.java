@@ -5,7 +5,12 @@
 package com.business.contract.vehicle.maintenance;
 
 /**
- *
+ * Abstract base class for defining maintenance schedules of train systems.
+ * 
+ * This class specifies the methods for retrieving and updating
+ * maintenance details of train components such as catenaries, pantographs,
+ * and circuit breakers.
+ * 
  * @author D. Santos
  */
 abstract class TrainMaintenanceScheduleContract {
@@ -52,7 +57,7 @@ abstract class TrainMaintenanceScheduleContract {
 
     public abstract void setCircuitBreakerLastMaintenanceDate(String circuitBreakerLastMaintenanceDate);
     
-     //get next service overhaul dates
+    //get next service overhaul dates
     public abstract String getNextServiceOverhaulDate();
 
     //set next service overhaul date.
@@ -66,6 +71,5 @@ abstract class TrainMaintenanceScheduleContract {
 
     //send maintenance alert
     public abstract void sendMaintenanceAlert();
-    
 
 }
