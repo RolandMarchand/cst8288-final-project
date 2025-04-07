@@ -1,5 +1,9 @@
 package dataaccess;
 
+import com.business.contract.controller.MediatorContract;
+import com.business.contract.controller.MediatorEvent;
+import com.business.contract.controller.VehicleRegistrationMediatorEvent;
+import static java.lang.Double.parseDouble;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,13 +11,14 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * Data Access Object for the vehicles table
  *
  * @author roland
  */
-public class VehicleDAO {
+public class VehicleDAO implements MediatorContract {
 
     /**
      * Create a new vehicle in the database
@@ -305,5 +310,36 @@ public class VehicleDAO {
             e.printStackTrace();
             return false;
         }
+    }
+
+    @Override
+    public void sendEvent(MediatorEvent mediatorEvent) {
+
+    }
+
+    @Override
+    public void receiveEvent(MediatorEvent mediatorEvent) {
+        handleIncomingEvent(mediatorEvent);
+
+    }
+
+    public void handleIncomingEvent(MediatorEvent mediatorEvent) {
+        String registrationNumber;
+        String vehicleTypeId;
+        String fuelEnergyTypeId;
+        double consumptionRate;
+        int maxPassengers;
+        Integer currentRouteId;
+
+        VehicleRegistrationMediatorEvent vehicleDetails = (VehicleRegistrationMediatorEvent) mediatorEvent;
+        HttpServletRequest request = vehicleDetails.getRequest();
+        registrationNumber = request.getParameter("vehicleNumber");
+        vehicleTypeId = request.getParameter("vehicleType");
+        fuelEnergyTypeId = request.getParameter("fuelType");
+        consumptionRate = Double.parseDouble(request.getParameter("consumptionRate"));
+        maxPassengers = Integer.parseInt(request.getParameter("maxPassengers"));
+         //TODO: Implement route assignation in presentation layer.
+        currentRouteId = Integer.parseInt(request.getParameter(""));
+        createVehicle(registrationNumber, vehicleTypeId, fuelEnergyTypeId,consumptionRate, maxPassengers, currentRouteId);
     }
 }

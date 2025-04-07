@@ -4,6 +4,7 @@
 package com.business.vehicle.gpsimpl;
 
 
+import com.business.contract.controller.MediatorEvent;
 import com.business.contract.controller.VehicleRegistrationMediator;
 import java.util.HashMap;
 
@@ -198,17 +199,16 @@ public class VehicleSimulator implements VehicleSimulatorContract {
             }
         }
     }
+
+    @Override
+    public void sendEvent(MediatorEvent mediatorEvent) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void receiveEvent(MediatorEvent mediatorEvent) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
-    @Override
-    public void sendEvent(VehicleRegistrationMediator mediatorEvent) {
-    }
 
-    @Override
-    public void receiveEvent(VehicleRegistrationMediator mediatorEvent) {
-    }
-
-    @Override
-    public String processVehicleRegistration(VehicleRegistrationMediator mediatorEvent) {
-        return null;
-    }
 }

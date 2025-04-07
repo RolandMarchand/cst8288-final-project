@@ -4,15 +4,15 @@
  */
 package com.business.contract.vehicle.gps;
 
-import com.business.contract.controller.Mediator;
 import java.time.LocalDateTime;
 import java.util.HashMap;
+import com.business.contract.controller.MediatorContract;
 
 /**
  *
  * @author D. Santos
  */
-public interface VehicleSimulatorContract extends Mediator {
+public interface VehicleSimulatorContract extends MediatorContract {
 
     public abstract void gpsOverallCoordinator();
 

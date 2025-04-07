@@ -1,11 +1,17 @@
 package presentation;
 
+import com.business.contract.controller.LoginMediator;
+import com.business.contract.controller.LoginMediatorEvent;
+import com.business.contract.controller.MediatorEvent;
+import com.business.contract.controller.VehicleRegistrationMediator;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import com.business.contract.controller.MediatorContract;
+import com.business.contract.controller.VehicleRegistrationMediatorEvent;
 
 /**
  * This servlet handles the user registration form and posts a attemptUserRegistration action to MainController.
@@ -13,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  * 
  * @author sebl4
  */
-public class RegistrationPage extends HttpServlet {
+public class RegistrationPage extends HttpServlet implements MediatorContract  {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -26,7 +32,7 @@ public class RegistrationPage extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
@@ -88,7 +94,7 @@ public class RegistrationPage extends HttpServlet {
     }
 
     /**
-     * Handles the HTTP <code>POST</code> method.
+     * Handles the HTTP <code>POST</code> method. Sends request off to Mediator for transmission to login DAO.
      *
      * @param request servlet request
      * @param response servlet response
@@ -98,6 +104,11 @@ public class RegistrationPage extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        MediatorEvent loginEvent = new VehicleRegistrationMediatorEvent(request);
+        VehicleRegistrationMediator.getInstance().receiveEvent(loginEvent);
+        
+        
         processRequest(request, response);
     }
 
@@ -106,9 +117,17 @@ public class RegistrationPage extends HttpServlet {
      *
      * @return a String containing servlet description
      */
+
     @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
+    public void sendEvent(MediatorEvent mediatorEvent) {
+        
+    }
+
+    @Override
+    public void receiveEvent(MediatorEvent mediatorEvent) {
+        
+    }
+
+   
 
 }

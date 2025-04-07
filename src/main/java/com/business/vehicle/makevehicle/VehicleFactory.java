@@ -9,18 +9,9 @@ import com.business.vehicle.gpsimpl.VehicleSimulator;
  *
  * @author D. Santos
  */
-public class VehicleFactory extends VehicleRegistrationMediator {
+public class VehicleFactory {
 
-    @Override
-    public void sendEvent(VehicleRegistrationMediator mediatorEvent) {
 
-    }
-
-    @Override
-    public void receiveEvent(VehicleRegistrationMediator mediatorEvent) {
-        incomingVehicleRequest(mediatorEvent);
-
-    }
 
     public void incomingVehicleRequest(VehicleRegistrationMediator mediatorEvent) {
 

@@ -7,12 +7,13 @@ package com.business.contract.controller;
 import com.business.contract.vehicle.vehicleparts.BusPartsContract;
 import com.business.vehicle.makevehicle.DieselBusMaintenanceSchedule;
 import com.business.vehicle.makevehicle.VehicleFactory;
+import dataaccess.VehicleDAO;
 
 /**
  *
  * @author drssa
  */
-public class VehicleRegistrationMediator implements Mediator {
+public class VehicleRegistrationMediator implements MediatorContract {
 
     private static VehicleRegistrationMediator concreteMediator;
 
@@ -52,48 +53,33 @@ public class VehicleRegistrationMediator implements Mediator {
     public boolean alertMaintenance;
     public String placeholder1;
 
-    //singleton
-    public static VehicleRegistrationMediator getMediatorInstance() {
-        if (concreteMediator == null) {
-            concreteMediator = new VehicleRegistrationMediator();
-            return concreteMediator;
-        } else {
-            return concreteMediator;
+    private static VehicleRegistrationMediator vehicleRegistrationMediatorInstance;
+    
+    private VehicleRegistrationMediator(){
+    }
+    
+    public static VehicleRegistrationMediator getInstance(){
+        if (vehicleRegistrationMediatorInstance == null) {
+            vehicleRegistrationMediatorInstance = new VehicleRegistrationMediator();
+            return vehicleRegistrationMediatorInstance;
         }
+        return vehicleRegistrationMediatorInstance;
+    }
+    
+    
+    @Override
+    public void receiveEvent(MediatorEvent mediatorEvent) {
+            sendEvent(mediatorEvent);
     }
 
     /**
-     * Register the viewer class instance where the request comes from. TODO:
-     * Connect points.
-     *
-     * @param object
-     */
-    public void setView(String object) {
-        this.placeholder1 = object;
-    }
-
-    /**
-     * Pass the vehicle request to the business logic class for making the
-     * vehicle.
      *
      * @param mediatorEvent
      */
     @Override
-    public void sendEvent(VehicleRegistrationMediator mediatorEvent) {
-        VehicleFactory vehicleFactory = new VehicleFactory();
-        vehicleFactory.sendEvent(mediatorEvent);
+    public void sendEvent(MediatorEvent mediatorEvent) {
+        VehicleDAO vehicleDao = new VehicleDAO();
+        vehicleDao.receiveEvent(mediatorEvent);
     }
-
-    @Override
-    public void receiveEvent(VehicleRegistrationMediator mediatorEvent) {
-        //TODO: Make connection.
-        //this.Object.handleIncoming(mediatorEvent);
-    }
-
-    //TODO: determine steps for processVehicleRegistration.
-    @Override
-    public String processVehicleRegistration(VehicleRegistrationMediator mediatorEvent) {
-        String object = new String();
-        return object;
-    }
+    
 }

@@ -1,5 +1,8 @@
 package presentation;
 
+import com.business.contract.controller.LoginMediator;
+import com.business.contract.controller.LoginMediatorEvent;
+import com.business.contract.controller.MediatorEvent;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -83,6 +86,10 @@ public class LoginPage extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        MediatorEvent loginEvent = new LoginMediatorEvent(request);
+        LoginMediator.getInstance().receiveEvent(loginEvent);
+        
         processRequest(request, response);
     }
 

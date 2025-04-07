@@ -1,5 +1,8 @@
 package presentation;
 
+import com.business.contract.controller.LoginMediatorEvent;
+import com.business.contract.controller.MediatorEvent;
+import com.business.contract.controller.VehicleRegistrationMediatorEvent;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -102,6 +105,9 @@ public class AddVehiclePage extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        MediatorEvent loginEvent = new VehicleRegistrationMediatorEvent(request);
+        
         processRequest(request, response);
     }
 

@@ -12,12 +12,12 @@ import javax.swing.JButton;
  *
  * @author drssa
  */
-public interface Mediator {
+public interface MediatorContract {
 
-    public  void sendEvent(VehicleRegistrationMediator mediatorEvent);
+    public abstract void sendEvent(MediatorEvent mediatorEvent);
     
-    public void receiveEvent(VehicleRegistrationMediator mediatorEvent);
+    public abstract void receiveEvent(MediatorEvent mediatorEvent);
     
-    public String processVehicleRegistration(VehicleRegistrationMediator mediatorEvent);
+
     
 }
