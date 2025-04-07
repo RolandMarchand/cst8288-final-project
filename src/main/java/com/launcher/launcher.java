@@ -5,8 +5,6 @@
 package com.launcher;
 
 import com.business.contract.vehicle.routes.TransitRouteBuilder;
-import jakarta.json.JsonArray;
-import jakarta.json.JsonObject;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -20,13 +18,6 @@ public class launcher {
 
         TransitRouteBuilder transitStop2 = new TransitRouteBuilder();
         transitStop2.loadTransitRoutes();
-
-        ArrayList<JsonArray> test2 = new ArrayList<JsonArray>();
-        JsonArray test1 = test2.get(0);
-
-        JsonObject zilch = test1.getJsonObject(0);
-        String zilch2 = zilch.getString("stopName");
-        System.out.println(zilch2);
 
     }
 }
