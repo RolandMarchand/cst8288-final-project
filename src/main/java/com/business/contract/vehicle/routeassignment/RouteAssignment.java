@@ -4,7 +4,6 @@ import com.business.contract.controller.ObserverPattern;
 import com.business.contract.vehicle.routes.TransitRouteBuilder;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Uses a STRATEGY pattern to assign a route to a given vehicle using its
@@ -59,22 +58,11 @@ public class RouteAssignment {
         for (int i = 0; i < transitStops.size(); i++) {
             routeChecker = transitStops.get(i);
             if (routeChecker[0].equals(routeName)) {
-                
-            returnRoute.add(routeChecker);
-               
-            }
-        }
-        return returnRoute;
 
-            JsonArray pull = transitStops.get(i);
-            JsonObject check = pull.getJsonObject(i);
-            String routechk = check.keySet().iterator().next();
-            if (routeName.equals(routechk)) {
-                returnRoute.add(pull);
-            }
+                returnRoute.add(routeChecker);
 
+            }
         }
         return returnRoute;
     }
-
 }
