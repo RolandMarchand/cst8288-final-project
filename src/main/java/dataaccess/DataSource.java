@@ -67,9 +67,14 @@ public class DataSource {
         Properties props = new Properties();
 
         // Try-with-resources to ensure proper resource cleanup
-        try (InputStream in = Files.newInputStream(Paths.get("/WEB-INF/database.propriety"))) {
+        try (InputStream in = Files.newInputStream(Paths.get("src/main/webapp/WEB-INF/database.properties"))) {
             props.load(in);
         } catch (IOException e) {
+            try (InputStream in = Files.newInputStream(Paths.get("/WEB-INF/database.properties"))) {
+                props.load(in);
+            } catch (IOException e2) {
+                e.printStackTrace();
+            }
             e.printStackTrace();
         }
 
