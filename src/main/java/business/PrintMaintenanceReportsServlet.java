@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
+ * Servlet responsible for handling maintenance report printing requests.
+ * Business logic should be added to generate and display actual report data.
+ * 
  * @author sebl4
  */
 public class PrintMaintenanceReportsServlet extends HttpServlet {

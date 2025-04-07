@@ -5,7 +5,11 @@
 package com.business.contract.vehicle.maintenance;
 
 /**
- *
+ * Abstract class for maintenance schedule contract for diesel buses.
+ * 
+ * This class extends the BusMaintenanceScheduleContract
+ * and continues to define abstract methods for diesel-specific implementations.
+ * 
  * @author D. Santos
  */
 public abstract class DieselBusMaintenanceScheduleContract extends BusMaintenanceScheduleContract {

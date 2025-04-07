@@ -20,6 +20,14 @@ public class RouteAssignment {
     public ArrayList<String[]> transitStops;
     public ArrayList<String> transitRouteNames;
 
+    /**
+     * Loads the route information using the TransitRouteBuilder and updates 
+     * the lists of transit stops and route names.
+     * 
+     * @param observer the ObserverPattern object to notify when routes are loaded
+     * @return null (Currently returns null, can be updated to return the loaded route data)
+     * @throws IOException if an error occurs while loading transit routes
+     */
     public ArrayList<String[]> loadRouteInfo(ObserverPattern observer) throws IOException {
 
         TransitRouteBuilder transitRouteBuilder = new TransitRouteBuilder();
@@ -48,8 +56,8 @@ public class RouteAssignment {
      * the user dashboard. The user selects a route, parses the ArrayList for
      * that route name, and add all its stops to a new ArrayList.
      *
-     * @param routeName
-     * @return
+     * @param routeName the name of the route selected by the user
+     * @return an ArrayList of String arrays containing the stops of the selected route
      */
     public ArrayList<String[]> routeSelection(String routeName) {
         ArrayList<String[]> returnRoute;

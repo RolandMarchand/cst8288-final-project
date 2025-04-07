@@ -13,9 +13,15 @@ import java.sql.Date;
 import java.time.LocalDate;
 
 /**
- * Data Access Object for bus maintenance schedules
- *
- * @author roland
+ * Handles all database operations related to 
+ * bus maintenance schedules.
+ * 
+ * This class creates new maintenance records 
+ * for buses and stores them in the database.
+ * 
+ * It connects to the database using the DataSource class.
+ * 
+ * Author: roland
  */
 public class BusMaintenanceScheduleDAO {
 
@@ -71,7 +77,8 @@ public class BusMaintenanceScheduleDAO {
                 + "next_service_overhaul_date, last_service_overhaul_date) "
                 + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-        try (Connection conn = DataSource.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+        try (Connection conn = DataSource.getConnection(); 
+             PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
             stmt.setInt(1, vehicleId);
             stmt.setInt(2, brakesMaintenanceKm);

@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ * This servlet displays the vehicle management page, allowing users to add or
+ * delete vehicles in the transit system.
  *
  * @author sebl4
  */

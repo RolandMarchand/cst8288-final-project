@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
+ * Servlet responsible for handling validation logic during new user registration.
+ * Connects to backend business logic for proper implementation.
+ * 
  * @author sebl4
  */
 public class ValidateNewUser extends HttpServlet {

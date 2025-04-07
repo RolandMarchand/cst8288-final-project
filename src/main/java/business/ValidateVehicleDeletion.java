@@ -8,17 +8,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
+ * Servlet that handles validation logic for deleting vehicles.
+ * This class is meant to be extended with proper business rules.
+ * 
  * @author sebl4
  */
 public class ValidateVehicleDeletion extends HttpServlet {
 
     /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
+     * Processes both GET and POST requests for vehicle deletion validation.
      *
-     * @param request servlet request
-     * @param response servlet response
+     * @param request the HttpServletRequest object
+     * @param response the HttpServletResponse object
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
@@ -26,7 +27,7 @@ public class ValidateVehicleDeletion extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+            // Placeholder HTML output
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -39,12 +40,11 @@ public class ValidateVehicleDeletion extends HttpServlet {
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
-     * Handles the HTTP <code>GET</code> method.
+     * Handles the HTTP GET method.
      *
-     * @param request servlet request
-     * @param response servlet response
+     * @param request the HttpServletRequest object
+     * @param response the HttpServletResponse object
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
@@ -55,10 +55,10 @@ public class ValidateVehicleDeletion extends HttpServlet {
     }
 
     /**
-     * Handles the HTTP <code>POST</code> method.
+     * Handles the HTTP POST method.
      *
-     * @param request servlet request
-     * @param response servlet response
+     * @param request the HttpServletRequest object
+     * @param response the HttpServletResponse object
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
@@ -69,13 +69,13 @@ public class ValidateVehicleDeletion extends HttpServlet {
     }
 
     /**
-     * Returns a short description of the servlet.
+     * Returns a short description of this servlet.
      *
      * @return a String containing servlet description
      */
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
+    }
 
 }

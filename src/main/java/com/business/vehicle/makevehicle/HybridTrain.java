@@ -9,7 +9,11 @@ import com.business.contract.vehicle.vehicleparts.TrainPartsContract;
 import com.business.vehicle.gpsimpl.VehicleSimulator;
 
 /**
- *
+ * Represents a hybrid train with fuel and electric energy types.
+ * 
+ * Stores details like registration number, consumption rate,
+ * maximum passengers, assigned route, and maintenance information.
+ * 
  * @author D. Santos
  */
 public class HybridTrain extends HybridTrainContract {

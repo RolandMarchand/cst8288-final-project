@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
+ * Servlet for handling validation logic when registering a new vehicle.
+ * Meant to connect to the business logic that performs actual checks.
+ * 
  * @author sebl4
  */
 public class ValidateNewVehicleServlet extends HttpServlet {

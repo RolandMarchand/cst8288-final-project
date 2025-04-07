@@ -5,7 +5,10 @@
 package com.business.contract.vehicle.maintenance;
 
 /**
- *
+ * Abstract contract for managing a bus's maintenance schedule.
+ * This includes defining methods for tracking and setting maintenance-related data
+ * such as kilometer thresholds, part-specific service dates, and maintenance alerts.
+ * 
  * @author D. Santos
  */
 abstract class BusMaintenanceScheduleContract {

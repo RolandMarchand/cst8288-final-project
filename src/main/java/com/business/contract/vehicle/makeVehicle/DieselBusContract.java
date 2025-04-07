@@ -1,19 +1,23 @@
 package com.business.contract.vehicle.makeVehicle;
 
 import com.business.contract.vehicle.vehicleparts.BusPartsContract;
-import com.business.contract.vehicle.vehicleparts.BusPartsContract;
 import com.business.contract.vehicle.gps.VehicleSimulatorContract;
 
 /**
+ * Abstract contract for diesel-powered bus configurations.
  *
+ * Defines the structure that any diesel bus implementation must follow,
+ * with methods for accessing and modifying vehicle properties like the
+ * fuel/energy type, registration number, passenger capacity, and assigned routes.
+ * 
  * @author D. Santos
  */
- public abstract class DieselBusContract extends VehicleContract {
+public abstract class DieselBusContract extends VehicleContract {
 
-     @Override
+    @Override
     public abstract String getFuelEnergyType();
     
-     @Override
+    @Override
     public abstract String getVehicleRegistrationNumber();
 
     @Override
@@ -25,7 +29,6 @@ import com.business.contract.vehicle.gps.VehicleSimulatorContract;
     @Override
     public abstract String getCurrentAssignedRoute();
     
-    
     @Override
     public abstract void setFuelEnergyType(String fuelEnergy);
     
@@ -33,7 +36,7 @@ import com.business.contract.vehicle.gps.VehicleSimulatorContract;
     public abstract void setVehicleRegistrationNumber(String vehicleRegistrationNumber);
 
     @Override
-    public abstract void setConsumptionRate(String consumptionRate );
+    public abstract void setConsumptionRate(String consumptionRate);
 
     @Override
     public abstract void setMaxPassengerCount(String maxPassengers);
@@ -41,7 +44,4 @@ import com.business.contract.vehicle.gps.VehicleSimulatorContract;
     @Override
     public abstract void setCurrentAssignedRoute(String currentAssignedRoute);
 
-
-    
-   
 }
